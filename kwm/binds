@@ -1,0 +1,166 @@
+/* create variables */
+define MODE_MANAGER BindingModeSwitcher
+define YTD_MODE BindingModeYtd
+define SWAP_MODE BindingModeSwap
+define TREE_MODE BindingModeTree
+define SPACE_MODE BindingModeSpace
+
+define ytc /usr/local/bin/ytc
+define ~ /Users/Koe
+define terminal open -na /Applications/Utilities/Terminal.app
+define iterm osascript /Users/Koe/.kwm/scripts/iterm2.applescript
+
+/* set border colors */
+kwmc mode MODE_MANAGER color 0xddbdd322
+kwmc mode MODE_MANAGER prefix off
+kwmc mode MODE_MANAGER timeout 0.75
+
+/* set border color for different modes */
+kwmc mode YTD_MODE color 0xddcc5577
+kwmc mode SWAP_MODE color 0xdd458588
+kwmc mode TREE_MODE color 0xddfabd2f
+kwmc mode SPACE_MODE color 0xddb16286
+
+/* binds for default mode */
+kwmc bindsym ctrl-f mode activate MODE_MANAGER
+
+/* binds for mode MODE_MANAGER */
+kwmc bindsym MODE_MANAGER+ctrl-f mode activate default
+kwmc bindsym MODE_MANAGER-w mode activate YTD_MODE
+kwmc bindsym MODE_MANAGER-a mode activate SWAP_MODE
+kwmc bindsym MODE_MANAGER-s mode activate SPACE_MODE
+kwmc bindsym MODE_MANAGER-d mode activate TREE_MODE
+kwmc bindsym MODE_MANAGER-return exec iterm ; mode activate default
+
+kwmc bindsym MODE_MANAGER-h window -f west
+kwmc bindsym MODE_MANAGER-l window -f east
+kwmc bindsym MODE_MANAGER-j window -f south
+kwmc bindsym MODE_MANAGER-k window -f north
+kwmc bindsym MODE_MANAGER-n window -fm prev
+kwmc bindsym MODE_MANAGER-m window -fm next
+
+kwmc bindsym MODE_MANAGER-1 display -f 0
+kwmc bindsym MODE_MANAGER-2 display -f 1
+kwmc bindsym MODE_MANAGER-3 display -f 2
+
+kwmc bindsym MODE_MANAGER-< scratchpad add
+kwmc bindsym MODE_MANAGER-v scratchpad remove
+kwmc bindsym MODE_MANAGER-z scratchpad toggle 0 ; mode activate default
+kwmc bindsym MODE_MANAGER-x scratchpad toggle 1 ; mode activate default
+kwmc bindsym MODE_MANAGER-c scratchpad toggle 2 ; mode activate default
+
+/* binds for mode YTD_MODE */
+kwmc bindsym YTD_MODE+ctrl-f mode activate default
+kwmc bindsym YTD_MODE-< exec ytc fav
+kwmc bindsym YTD_MODE-x exec ytc play ; mode activate default
+kwmc bindsym YTD_MODE-z exec ytc prev
+kwmc bindsym YTD_MODE-c exec ytc next
+kwmc bindsym YTD_MODE-v exec ytc stop
+kwmc bindsym YTD_MODE-a exec ytc volup
+kwmc bindsym YTD_MODE-d exec ytc voldown
+kwmc bindsym YTD_MODE-s exec ytc mkfav ; mode activate default
+kwmc bindsym YTD_MODE-right exec ytc seekfw
+kwmc bindsym YTD_MODE-left exec ytc seekbk
+
+/* binds for mode SWAP_MODE */
+kwmc bindsym SWAP_MODE+ctrl-f mode activate default
+kwmc bindsym SWAP_MODE-h window -s west
+kwmc bindsym SWAP_MODE-j window -s south
+kwmc bindsym SWAP_MODE-k window -s north
+kwmc bindsym SWAP_MODE-l window -s east
+kwmc bindsym SWAP_MODE-m window -s mark
+
+kwmc bindsym SWAP_MODE+shift-k window -m north
+kwmc bindsym SWAP_MODE+shift-l window -m east
+kwmc bindsym SWAP_MODE+shift-j window -m south
+kwmc bindsym SWAP_MODE+shift-h window -m west
+kwmc bindsym SWAP_MODE+shift-m window -m mark
+
+kwmc bindsym SWAP_MODE-1 window -m space 1
+kwmc bindsym SWAP_MODE-2 window -m space 2
+kwmc bindsym SWAP_MODE-3 window -m space 3
+kwmc bindsym SWAP_MODE-4 window -m space 4
+kwmc bindsym SWAP_MODE-5 window -m space 5
+kwmc bindsym SWAP_MODE-z window -m space left
+kwmc bindsym SWAP_MODE-c window -m space right
+kwmc bindsym SWAP_MODE-left window -m space left ; space -fExperimental left
+kwmc bindsym SWAP_MODE-right window -m space right ; space -fExperimental right
+
+kwmc bindsym SWAP_MODE+shift-1 window -m display 0
+kwmc bindsym SWAP_MODE+shift-2 window -m display 1
+kwmc bindsym SWAP_MODE+shift-3 window -m display 2
+
+
+/* binds for mode SPACE_MODE */
+kwmc bindsym SPACE_MODE+ctrl-f mode activate default
+kwmc bindsym SPACE_MODE-a space -t bsp
+kwmc bindsym SPACE_MODE-s space -t monocle
+kwmc bindsym SPACE_MODE-d space -t float
+
+kwmc bindsym SPACE_MODE-x space -g increase horizontal
+kwmc bindsym SPACE_MODE-y space -g increase vertical
+
+kwmc bindsym SPACE_MODE+shift-x space -g decrease horizontal
+kwmc bindsym SPACE_MODE+shift-y space -g decrease vertical
+
+kwmc bindsym SPACE_MODE-left space -p increase left
+kwmc bindsym SPACE_MODE-right space -p increase right
+kwmc bindsym SPACE_MODE-up space -p increase top
+kwmc bindsym SPACE_MODE-down space -p increase bottom
+kwmc bindsym SPACE_MODE-p space -p increase all
+
+kwmc bindsym SPACE_MODE+shift-left space -p decrease left
+kwmc bindsym SPACE_MODE+shift-right space -p decrease right
+kwmc bindsym SPACE_MODE+shift-up space -p decrease top
+kwmc bindsym SPACE_MODE+shift-down space -p decrease bottom
+kwmc bindsym SPACE_MODE+shift-p space -p decrease all
+
+kwmc bindsym SPACE_MODE-1 space -fExperimental 1
+kwmc bindsym SPACE_MODE-2 space -fExperimental 2
+kwmc bindsym SPACE_MODE-3 space -fExperimental 3
+kwmc bindsym SPACE_MODE-4 space -fExperimental 4
+kwmc bindsym SPACE_MODE-5 space -fExperimental 5
+kwmc bindsym SPACE_MODE-6 space -fExperimental 6
+kwmc bindsym SPACE_MODE-z space -fExperimental left
+kwmc bindsym SPACE_MODE-c space -fExperimental right
+kwmc bindsym SPACE_MODE-f space -fExperimental previous
+
+/* binds for mode TREE_MODE */
+kwmc bindsym TREE_MODE+ctrl-f mode activate default
+
+kwmc bindsym TREE_MODE-f window -z fullscreen
+kwmc bindsym TREE_MODE-d window -z parent
+kwmc bindsym TREE_MODE-w window -t focused
+
+kwmc bindsym TREE_MODE-r tree rotate 90
+kwmc bindsym TREE_MODE-s window -c split-mode toggle ; mode activate default
+kwmc bindsym TREE_MODE-c window -c type toggle ; mode activate default
+
+kwmc bindsym TREE_MODE-h window -c expand 0.05 west
+kwmc bindsym TREE_MODE-j window -c expand 0.05 south
+kwmc bindsym TREE_MODE-k window -c expand 0.05 north
+kwmc bindsym TREE_MODE-l window -c expand 0.05 east
+kwmc bindsym TREE_MODE+shift-h window -c reduce 0.05 west
+kwmc bindsym TREE_MODE+shift-j window -c reduce 0.05 south
+kwmc bindsym TREE_MODE+shift-k window -c reduce 0.05 north
+kwmc bindsym TREE_MODE+shift-l window -c reduce 0.05 east
+
+kwmc bindsym TREE_MODE-p tree -pseudo create
+kwmc bindsym TREE_MODE+shift-p tree -pseudo destroy
+
+kwmc bindsym TREE_MODE-o window -s prev
+kwmc bindsym TREE_MODE+shift-o window -s next
+
+/* binds for default mode */
+kwmc bindsym cmd+alt+ctrl-q quit
+
+kwmc bindsym cmd+alt+ctrl-m window -mk focused
+kwmc bindsym cmd+alt+ctrl-h window -mk west wrap
+kwmc bindsym cmd+alt+ctrl-l window -mk east wrap
+kwmc bindsym cmd+alt+ctrl-j window -mk south wrap
+kwmc bindsym cmd+alt+ctrl-k window -mk north wrap
+
+kwmc bindsym cmd-@ write aasvi93@hotmail.com
+kwmc bindsym cmd-7 write \
+kwmc bindsym cmd-8 write {
+kwmc bindsym cmd-9 write }
