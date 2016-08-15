@@ -66,8 +66,8 @@ set incsearch
 set switchbuf=usetab,newtab
 set nojoinspaces
 "set cursorline
-let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
-set noshowmatch         " Don't match parentheses/brackets
+"let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
+"set noshowmatch         " Don't match parentheses/brackets
 set nocursorline        " Don't paint cursor line
 set nocursorcolumn      " Don't paint cursor column
 set lazyredraw          " Wait to redraw
@@ -80,7 +80,22 @@ autocmd BufWritePre * :%s/\s\+$//e
 " vim: set ft=vim :
 
 " enables to search in all open buffers with :Search <pattern>
-command! -nargs=1 Search call setqflist([]) | silent bufdo vimgrepadd <args> % | copen
+function! BuffersList()
+  let all = range(0, bufnr('$'))
+  let res = []
+  for b in all
+    if buflisted(b)
+      call add(res, bufname(b))
+    endif
+  endfor
+  return res
+endfunction
+
+function! GrepBuffers (expression)
+  exec 'vimgrep/'.a:expression.'/ '.join(BuffersList())
+endfunction
+
+command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
 
 let macvim_skip_colorscheme=0
 syntax enable
