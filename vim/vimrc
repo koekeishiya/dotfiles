@@ -36,6 +36,10 @@ inoremap √ <Esc>:m .+1<CR>==gi
 inoremap ª <Esc>:m .-2<CR>==gi
 vnoremap √ :m '>+1<CR>gv=gv
 vnoremap ª :m '<-2<CR>gv=gv
+nnoremap <F11> :silent make\|cwindow\|redraw!<cr>
+nnoremap <F12> :silent make install\|cwindow\|redraw!<cr>
+nnoremap <F1> :cprev<cr>
+nnoremap <F2> :cnext<cr>
 if has('nvim')
     tnoremap <Esc> <c-\><c-n>
 endif
@@ -75,7 +79,7 @@ set lazyredraw          " Wait to redraw
 let html_no_rendering=1 " Don't render italic, bold, links in HTML
 autocmd BufWritePre * :%s/\s\+$//e
 
-:set guitablabel=%N/\ %t\ %M
+set guitablabel=%N/\ %t\ %M
 
 " vim: set ft=vim :
 
@@ -95,9 +99,11 @@ function! GrepBuffers (expression)
   exec 'vimgrep/'.a:expression.'/ '.join(BuffersList())
 endfunction
 
-command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
+command! -nargs=0 Cclear call setqflist([]) | cclose
 
+command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
 let macvim_skip_colorscheme=0
 syntax enable
+compiler gcc
 
 colorscheme koe
