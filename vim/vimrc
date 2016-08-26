@@ -9,7 +9,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/deoplete.nvim'
-" Plugin 'vim-airline/vim-airline'
+Plugin 'critiqjo/lldb.nvim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -36,15 +39,25 @@ inoremap √ <Esc>:m .+1<CR>==gi
 inoremap ª <Esc>:m .-2<CR>==gi
 vnoremap √ :m '>+1<CR>gv=gv
 vnoremap ª :m '<-2<CR>gv=gv
-nnoremap <F11> :silent make\|cwindow\|redraw!<cr>
-nnoremap <F12> :silent make install\|cwindow\|redraw!<cr>
 nnoremap <F1> :cprev<cr>
 nnoremap <F2> :cnext<cr>
+nmap <F4> <Plug>LLBreakSwitch
+nnoremap <F5> :LLmode debug<CR>
+nnoremap <F6> :LL step<CR>
+nnoremap <F7> :LL next<CR>
+nnoremap <F8> :LL continue<CR>
+nnoremap <F9> :LL process interrupt<CR>
+nnoremap <F11> :silent make\|cwindow\|redraw!<cr>
+nnoremap <F12> :silent make install\|cwindow\|redraw!<cr>
+
 if has('nvim')
     tnoremap <Esc> <c-\><c-n>
 endif
 
 let mapleader = ','
+
+let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+
 
 "tab adds 4spaces
 filetype plugin indent on
@@ -58,6 +71,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=2
 set fileencodings=ucs-bom,utf-8,default,latin1
+set encoding=utf-8
 set modelines=0
 set window=0
 set number
@@ -103,6 +117,8 @@ command! -nargs=0 Cclear call setqflist([]) | cclose
 
 command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
 let macvim_skip_colorscheme=0
+let g:airline_powerline_fonts=1
+let g:airline_theme='gruvbox'
 syntax enable
 compiler gcc
 
