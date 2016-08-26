@@ -86,6 +86,8 @@ set nojoinspaces
 "set cursorline
 "let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
 "set noshowmatch         " Don't match parentheses/brackets
+set noshowcmd
+set noshowmode
 set nocursorline        " Don't paint cursor line
 set nocursorcolumn      " Don't paint cursor column
 set lazyredraw          " Wait to redraw
