@@ -53,7 +53,7 @@ module.exports = {
       cyan: '#00ffff',
       white: '#d5c4a1',
       lightBlack: '#505050',
-      lightRed: '#cc241d',
+      lightRed: '#cc5577',
       lightGreen: '#7aab7d',
       lightYellow: '#cd950c',
       lightBlue: '#83a598',
