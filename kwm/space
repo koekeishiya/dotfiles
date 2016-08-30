@@ -1,19 +1,22 @@
 kwmc config space 0 1 mode bsp
-kwmc config space 0 1 padding 170 150 160 160
+kwmc config space 0 1 padding 140 140 150 150
+kwmc config space 0 1 gap 25 25
 kwmc config space 0 1 name main
 kwmc config space 0 1 tree dev
 
 kwmc config space 0 2 mode monocle
-kwmc config space 0 2 padding 40 20 20 20
+kwmc config space 0 2 padding 20 20 20 20
 kwmc config space 0 2 name web
 
 kwmc config space 0 3 mode bsp
-kwmc config space 0 3 padding 140 120 150 150
+kwmc config space 0 3 padding 120 120 150 150
 kwmc config space 0 3 name rnd
 
 kwmc config space 0 4 mode bsp
-kwmc config space 0 4 padding 170 150 160 160
+kwmc config space 0 4 padding 150 150 160 160
 kwmc config space 0 4 name chat
 
 kwmc config space 0 5 mode float
 kwmc config space 0 5 name games
+
+kwmc config display 0 float-dim 500 350
