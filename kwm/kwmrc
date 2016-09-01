@@ -11,6 +11,8 @@ kwmc config center-on-float on
 kwmc config float-non-resizable on
 kwmc config lock-to-container on
 kwmc config cycle-focus on
+kwmc config mouse-drag on
+kwmc config mouse-drag mod shift
 
 kwmc config split-ratio 0.5
 kwmc config spawn left
