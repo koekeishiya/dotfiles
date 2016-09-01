@@ -5,7 +5,7 @@ kwmc config space 0 1 name main
 kwmc config space 0 1 tree dev
 
 kwmc config space 0 2 mode monocle
-kwmc config space 0 2 padding 20 20 20 20
+kwmc config space 0 2 padding 30 20 20 20
 kwmc config space 0 2 name web
 
 kwmc config space 0 3 mode bsp
