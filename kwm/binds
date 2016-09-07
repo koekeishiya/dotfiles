@@ -6,11 +6,11 @@ define TREE_MODE BindingModeTree
 define SPACE_MODE BindingModeSpace
 define INFO_MODE BindingModeInfo
 
-define ytc /usr/local/bin/ytc
-define ~ /Users/Koe
+/*
 define terminal open -na /Applications/Utilities/Terminal.app
-define iterm osascript /Users/Koe/.kwm/scripts/iterm2.applescript
-define hyperterm open -na /Applications/HyperTerm.app
+define terminal osascript ~/.kwm/scripts/iterm2.applescript
+*/
+define terminal open -na /Applications/HyperTerm.app
 
 /* set border colors */
 kwmc mode MODE_MANAGER color 0xddbdd322
@@ -34,7 +34,7 @@ kwmc bindsym MODE_MANAGER-a mode activate SWAP_MODE
 kwmc bindsym MODE_MANAGER-s mode activate SPACE_MODE
 kwmc bindsym MODE_MANAGER-d mode activate TREE_MODE
 kwmc bindsym MODE_MANAGER-q mode activate INFO_MODE
-kwmc bindsym MODE_MANAGER-return exec hyperterm ; mode activate default
+kwmc bindsym MODE_MANAGER-return exec terminal ; mode activate default
 
 kwmc bindsym MODE_MANAGER-h window -f west
 kwmc bindsym MODE_MANAGER-l window -f east
