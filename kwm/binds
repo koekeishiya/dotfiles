@@ -8,7 +8,6 @@ define INFO_MODE BindingModeInfo
 
 define ytc /usr/local/bin/ytc
 define ~ /Users/Koe
-define myscripts /Users/Koe/.kwm/scripts
 define terminal open -na /Applications/Utilities/Terminal.app
 define iterm osascript /Users/Koe/.kwm/scripts/iterm2.applescript
 define hyperterm open -na /Applications/HyperTerm.app
@@ -174,11 +173,16 @@ kwmc bindsym cmd-7 write \
 kwmc bindsym cmd-8 write {
 kwmc bindsym cmd-9 write }
 
+/* EXPERIMENTAL STUFF */
 kwmc bindsym INFO_MODE+ctrl-f mode activate default
-kwmc bindsym INFO_MODE-f exec myscripts/tag.sh; mode activate default
-kwmc bindsym INFO_MODE-d exec myscripts/date.sh; mode activate default
-kwmc bindsym INFO_MODE-t exec myscripts/time.sh; mode activate default
-kwmc bindsym INFO_MODE-y exec myscripts/current.sh; mode activate default
+kwmc bindsym INFO_MODE-f exec echo $(kwmc query space active tag) | alerter -title Focus -timeout 5; mode activate default
+kwmc bindsym INFO_MODE-d exec echo $(date +"%a %d %b") | alerter -title Date -timeout 5 ; mode activate default
+kwmc bindsym INFO_MODE-t exec echo $(date +%H:%M) | alerter -title Time -timeout 5 ; mode activate default
+kwmc bindsym INFO_MODE-y exec echo $(ytc current) | alerter -title Playing timeout 5; mode activate default
 
 kwmc bindsym INFO_MODE-c exec caffeinate -d; mode activate default
 kwmc bindsym INFO_MODE+cmd-c exec pkill caffeinate; mode activate default
+
+kwmc bindsym MODE_MANAGER+shift-a alpha 0.85
+kwmc bindsym MODE_MANAGER+shift-s alpha 0.9
+kwmc bindsym MODE_MANAGER+shift-d alpha 1.0
