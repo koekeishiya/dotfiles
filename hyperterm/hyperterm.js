@@ -59,7 +59,7 @@ module.exports = {
       lightBlue: '#83a598',
       lightMagenta: '#cc80a6',
       lightCyan: '#00ffff',
-      lightWhite: '#d5c4a1',
+      lightWhite: '#504945',
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
