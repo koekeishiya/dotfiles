@@ -41,7 +41,8 @@ hi StatusLineNC ctermfg=Black ctermbg=DarkBlue guifg=Black guibg=DarkBlue
 hi Normal guifg=White guibg=Black
 hi CursorLine cterm=NONE ctermbg=Black gui=NONE guibg=Black
 hi Error ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
-hi Search ctermfg=Black cterm=bold ctermbg=White guifg=Black gui=bold guibg=White
+hi Search cterm=bold ctermbg=15 guifg=Black gui=bold guibg=White
+hi Visual ctermbg=15 cterm=NONE
 hi PreProc ctermfg=Magenta guifg=Magenta
 hi MatchParen cterm=bold ctermbg=NONE ctermfg=8
 
