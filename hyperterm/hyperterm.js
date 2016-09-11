@@ -7,7 +7,7 @@ module.exports = {
     },
 
     // default font size in pixels for all tabs
-    fontSize: 9,
+    fontSize: 10,
 
     // font family with optional fallbacks
     fontFamily: 'Input Mono, Courier New',
@@ -22,7 +22,7 @@ module.exports = {
     foregroundColor: '#d5c4a1',
 
     // terminal background color
-    backgroundColor: '#171717',
+    backgroundColor: '#1b1b1b',
 
     // border color (window, tabs)
     borderColor: 'rgba(0,0,0,0)',
@@ -44,7 +44,7 @@ module.exports = {
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
     colors: {
-      black: '#171717',
+      black: '#1b1b1b',
       red: '#d75f5f',
       green: '#b8bb26',
       yellow: '#cd950c',
