@@ -1,5 +1,5 @@
 kwmc config tiling bsp
-kwmc config hotkeys on
+kwmc config hotkeys off
 
 kwmc config padding 40 20 20 20
 kwmc config gap 10 10
@@ -20,7 +20,7 @@ kwmc config spawn left
 
 kwmc config border marked on
 kwmc config border marked size 2
-kwmc config border marked color 0xDDd75f5f
+kwmc config border marked color 0xDD7f7f7f
 kwmc config border marked radius 6
 
 include space
