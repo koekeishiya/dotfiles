@@ -13,7 +13,7 @@ module.exports = {
     fontFamily: 'Input Mono, Courier New',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(215,95,95,0.60)',
+    cursorColor: 'rgba(127,127,127,0.60)',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
