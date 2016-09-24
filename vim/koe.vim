@@ -18,7 +18,7 @@ hi YcmErrorSection ctermbg=Black guibg=Black
 hi YcmErrorSign ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
 hi Pmenu ctermfg=White ctermbg=Black guifg=White guibg=Black
 hi Type ctermfg=8 guifg=#353535
-hi Statement ctermfg=DarkRed guifg=DarkRed
+hi Statement ctermfg=8 guifg=DarkRed
 hi Constant ctermfg=DarkGreen guifg=DarkGreen
 hi Operator ctermfg=DarkGreen guifg=DarkGreen
 hi Number ctermfg=DarkGreen guifg=DarkGreen
