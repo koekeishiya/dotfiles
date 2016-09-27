@@ -10,9 +10,8 @@
 #                         app,     = optional list '[app1, ..., appN]' of applications
 #                         app>]      that this bind will be activated for. if the
 #                                    focused application is not contained in this list,
-#                                    the associated command will not be triggered.
-#
-#                                    note: the keypress will still be consumed.
+#                                    the associated command will not be triggered, and
+#                                    the keypress will be passed through as normal.
 #
 #                       [!]        = optional operator '!' negates the behaviour when a
 #                                    list of applications is given. this marks the bind
@@ -238,3 +237,9 @@ cmd - 0x2A              :   khd -w "aasvi93@hotmail.com"
 cmd - 7                 :   khd -w "\\"
 cmd - 8                 :   khd -w "{"
 cmd - 9                 :   khd -w "}"
+
+# remap left-control h/j/k/l -> arrow keys
+lctrl - h               :   khd -p "- left"
+lctrl - j               :   khd -p "- down"
+lctrl - k               :   khd -p "- up"
+lctrl - l               :   khd -p "- right"
