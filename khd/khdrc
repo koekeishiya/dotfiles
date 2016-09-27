@@ -57,6 +57,35 @@
 
 
 
+# vi-mode for non-terminal applications
+
+# remap left-control h/j/k/l -> arrow keys
+lctrl - h         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- left"
+lctrl - j         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- down"
+lctrl - k         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- up"
+lctrl - l         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- right"
+
+shift + lctrl - h ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - left"
+shift + lctrl - j ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - down"
+shift + lctrl - k ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - up"
+shift + lctrl - l ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - right"
+
+# remap left-control 0 / 4   -> start / end of line
+lctrl - 0         ![HyperTerm,Terminal,iTerm2]      :   khd -p "cmd - left"
+lctrl - 4         ![HyperTerm,Terminal,iTerm2]      :   khd -p "cmd - right"
+
+shift + lctrl - 0 ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + cmd - left"
+shift + lctrl - 4 ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + cmd - right"
+
+# remap left-control b / e   -> start / end of word
+lctrl - b         ![HyperTerm,Terminal,iTerm2]      :   khd -p "alt - left"
+lctrl - e         ![HyperTerm,Terminal,iTerm2]      :   khd -p "alt - right"
+
+shift + lctrl - b ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + alt - left"
+shift + lctrl - e ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + alt - right"
+
+
+
 # enable kwm compatibility mode
 khd kwm on
 
@@ -237,9 +266,3 @@ cmd - 0x2A              :   khd -w "aasvi93@hotmail.com"
 cmd - 7                 :   khd -w "\\"
 cmd - 8                 :   khd -w "{"
 cmd - 9                 :   khd -w "}"
-
-# remap left-control h/j/k/l -> arrow keys
-lctrl - h               :   khd -p "- left"
-lctrl - j               :   khd -p "- down"
-lctrl - k               :   khd -p "- up"
-lctrl - l               :   khd -p "- right"
