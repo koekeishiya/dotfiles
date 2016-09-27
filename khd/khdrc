@@ -84,6 +84,9 @@ lctrl - e         ![HyperTerm,Terminal,iTerm2]      :   khd -p "alt - right"
 shift + lctrl - b ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + alt - left"
 shift + lctrl - e ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + alt - right"
 
+# remap left-control x       -> forward delete
+lctrl - x         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- delete"
+
 
 
 # enable kwm compatibility mode
