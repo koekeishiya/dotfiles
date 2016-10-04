@@ -83,6 +83,7 @@ set smartcase           " ... unless the query has capital letters.
 set incsearch
 set switchbuf=usetab,newtab
 set nojoinspaces
+set cino==0             " disable retarded indentation after case labels
 "set cursorline
 "let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
 "set noshowmatch         " Don't match parentheses/brackets
