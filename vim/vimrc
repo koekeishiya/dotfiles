@@ -118,6 +118,21 @@ endfunction
 command! -nargs=0 Cclear call setqflist([]) | cclose
 
 command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
+
+abbreviate cmain int main(int Count, char **Args)
+            \<CR>{<CR>exit(EXIT_SUCCESS);<CR>}<UP><UP>
+
+abbreviate cerror void Error(const char *Format, ...)
+            \<CR>{<CR>va_list Args;<CR>va_start(Args, Format);
+            \<CR>vfprintf(stderr, Format, Args);
+            \<CR>va_end(Args);<CR>exit(EXIT_FAILURE);<CR>}
+
+abbreviate cargs int ParseArguments(int Count, char **Args)
+            \<CR>{<CR>int Option;<CR>const char *Short = "";
+            \<CR>struct option Long[] =<CR>{<CR>{ NULL, 0, NULL, 0 }<CR>};<CR>
+            \<CR>while((Option = getopt_long(Count, Args, Short, Long, NULL)) != -1)
+            \<CR>{<CR>switch(Option)<CR>{<CR>}<CR>}<CR><CR>return 0;<CR>}
+
 let macvim_skip_colorscheme=0
 let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
