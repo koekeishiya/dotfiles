@@ -121,7 +121,7 @@ command! -nargs=0 Cclear call setqflist([]) | cclose
 command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
 
 abbreviate cmain int main(int Count, char **Args)
-            \<CR>{<CR>exit(EXIT_SUCCESS);<CR>}<UP><UP>
+            \<CR>{<CR>return EXIT_SUCCESS;<CR>}<UP><UP>
 
 abbreviate cerror void Error(const char *Format, ...)
             \<CR>{<CR>va_list Args;<CR>va_start(Args, Format);
