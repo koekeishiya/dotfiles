@@ -2,13 +2,13 @@ kwmc config tiling bsp
 kwmc config split-ratio 0.5
 kwmc config spawn left
 
-kwmc config padding 40 20 20 20
+kwmc config padding 40 40 20 20
 kwmc config gap 10 10
 
 kwmc config focus-follows-mouse on
 kwmc config mouse-follows-focus on
 kwmc config standby-on-float on
-kwmc config center-on-float on
+kwmc config center-on-float off
 kwmc config float-non-resizable on
 kwmc config lock-to-container on
 kwmc config cycle-focus on
@@ -28,4 +28,3 @@ kwmc config border marked radius 6
 
 include space
 include rules
-

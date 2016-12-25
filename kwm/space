@@ -1,8 +1,6 @@
 kwmc config space 0 1 mode bsp
-/*
 kwmc config space 0 1 padding 160 140 150 150
 kwmc config space 0 1 gap 25 25
-*/
 kwmc config space 0 1 name main
 kwmc config space 0 1 tree dev
 
