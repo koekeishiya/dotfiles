@@ -5,6 +5,7 @@
 #                   where
 #                       <keysym>   = mode + mod + ... + mod - literal
 #                       <keysym>   = mode + mod + ... + mod - keycode (must have 0x prefix)
+#                       <keysym>   = mode + mod + ... + mod (modifier only binding)
 #
 #                       [<app,
 #                         app,     = optional list '[app1, ..., appN]' of applications
@@ -38,7 +39,7 @@
 # alt - e [
 #           iTerm2,
 #           Terminal,
-#           HyperTerm
+#           Hyper
 #         ]
 #         : echo "so this is how deep the rabbit hole goes.." |\
 #           alerter -title Test passthrough -timeout 2
@@ -47,10 +48,20 @@
 # alt - e [
 #           iTerm2,
 #           Terminal,
-#           HyperTerm
+#           Hyper
 #         ] !
 #         : echo "blue pill, i choose you!" |\
 #           alerter -title Test passthrough -timeout 2
+
+# NOTE(koekeishiya) Modifier only binding
+# left shift    -> (    right shift   -> )
+# left cmd      -> {    right cmd     -> }
+
+# khd mod_trigger_timeout 0.1
+# lshift : khd -p "shift - 8"
+# rshift : khd -p "shift - 9"
+# lcmd   : khd -p "shift + alt - 8"
+# rcmd   : khd -p "shift + alt - 9"
 
 # TODO(koekeishiya): possibly allow combined syntax such as
 # [switcher,ytd] + ctrl - f : khd -e "mode activate default"
@@ -60,32 +71,36 @@
 # vi-mode for non-terminal applications
 
 # remap left-control h/j/k/l -> arrow keys
-lctrl - h         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- left"
-lctrl - j         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- down"
-lctrl - k         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- up"
-lctrl - l         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- right"
+lctrl - h         ![Hyper,Terminal,iTerm2]      :   khd -p "- left"
+lctrl - j         ![Hyper,Terminal,iTerm2]      :   khd -p "- down"
+lctrl - k         ![Hyper,Terminal,iTerm2]      :   khd -p "- up"
+lctrl - l         ![Hyper,Terminal,iTerm2]      :   khd -p "- right"
 
-shift + lctrl - h ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - left"
-shift + lctrl - j ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - down"
-shift + lctrl - k ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - up"
-shift + lctrl - l ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift - right"
+shift + lctrl - h ![Hyper,Terminal,iTerm2]      :   khd -p "shift - left"
+shift + lctrl - j ![Hyper,Terminal,iTerm2]      :   khd -p "shift - down"
+shift + lctrl - k ![Hyper,Terminal,iTerm2]      :   khd -p "shift - up"
+shift + lctrl - l ![Hyper,Terminal,iTerm2]      :   khd -p "shift - right"
 
 # remap left-control 0 / 4   -> start / end of line
-lctrl - 0         ![HyperTerm,Terminal,iTerm2]      :   khd -p "cmd - left"
-lctrl - 4         ![HyperTerm,Terminal,iTerm2]      :   khd -p "cmd - right"
+lctrl - 0         ![Hyper,Terminal,iTerm2]      :   khd -p "cmd - left"
+lctrl - 4         ![Hyper,Terminal,iTerm2]      :   khd -p "cmd - right"
 
-shift + lctrl - 0 ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + cmd - left"
-shift + lctrl - 4 ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + cmd - right"
+# remap left-control g / G   -> start / end of text
+lctrl - g         ![Hyper,Terminal,iTerm2]      :   khd -p "cmd - up"
+lctrl + shift - g ![Hyper,Terminal,iTerm2]      :   khd -p "cmd - down"
+
+shift + lctrl - 0 ![Hyper,Terminal,iTerm2]      :   khd -p "shift + cmd - left"
+shift + lctrl - 4 ![Hyper,Terminal,iTerm2]      :   khd -p "shift + cmd - right"
 
 # remap left-control b / e   -> start / end of word
-lctrl - b         ![HyperTerm,Terminal,iTerm2]      :   khd -p "alt - left"
-lctrl - e         ![HyperTerm,Terminal,iTerm2]      :   khd -p "alt - right"
+lctrl - b         ![Hyper,Terminal,iTerm2]      :   khd -p "alt - left"
+lctrl - e         ![Hyper,Terminal,iTerm2]      :   khd -p "alt - right"
 
-shift + lctrl - b ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + alt - left"
-shift + lctrl - e ![HyperTerm,Terminal,iTerm2]      :   khd -p "shift + alt - right"
+shift + lctrl - b ![Hyper,Terminal,iTerm2]      :   khd -p "shift + alt - left"
+shift + lctrl - e ![Hyper,Terminal,iTerm2]      :   khd -p "shift + alt - right"
 
 # remap left-control x       -> forward delete
-lctrl - x         ![HyperTerm,Terminal,iTerm2]      :   khd -p "- delete"
+lctrl - x         ![Hyper,Terminal,iTerm2]      :   khd -p "- delete"
 
 
 
@@ -123,9 +138,6 @@ switcher - q            :   khd -e "mode activate info"
 
 # switcher mode
 switcher - r            :   khd -e "reload" # reload config
-
-switcher - return       :   open -na /Applications/HyperTerm.app;\
-                            khd -e "mode activate default"
 
 switcher - h            :   kwmc window -f west
 switcher - l            :   kwmc window -f east
@@ -259,6 +271,8 @@ tree + shift - o        :   kwmc window -s next
 
 
 # default
+cmd - return            :   open -na /Applications/Hyper.app
+
 cmd + alt + ctrl - m    :   kwmc window -mk focused
 cmd + alt + ctrl - h    :   kwmc window -mk west wrap
 cmd + alt + ctrl - l    :   kwmc window -mk east wrap
@@ -266,6 +280,9 @@ cmd + alt + ctrl - j    :   kwmc window -mk south wrap
 cmd + alt + ctrl - k    :   kwmc window -mk north wrap
 
 cmd - 0x2A              :   khd -w "aasvi93@hotmail.com"
-cmd - 7                 :   khd -w "\\"
-cmd - 8                 :   khd -w "{"
-cmd - 9                 :   khd -w "}"
+cmd - 7                 :   khd -p "alt + shift - 7"
+cmd - 8                 :   khd -p "alt + shift - 8"
+cmd - 9                 :   khd -p "alt + shift - 9"
+
+# ctrl + alt - right      :   khd -p "cmd + ctrl - right"
+# ctrl + alt - left       :   khd -p "cmd + ctrl - left"
