@@ -1,0 +1,8 @@
+rm -f ~/Pictures/fade/*
+#cp ~/Pictures/island/island_night.jpg ~/Pictures/fade/
+cp ~/Pictures/firewatch/firewatch_night.png ~/Pictures/fade/
+#cp ~/Pictures/aqua/aqua_night.jpg ~/Pictures/fade/
+
+cp ~/.night-hyper.js ~/.hyper.js
+osascript ~/Scripts/wallchange.applescript
+osascript ~/Scripts/dark_menu.applescript

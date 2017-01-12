@@ -1,0 +1,8 @@
+rm -f ~/Pictures/fade/*
+#cp ~/Pictures/island/island_day.jpg ~/Pictures/fade/
+cp ~/Pictures/firewatch/firewatch_day.png ~/Pictures/fade/
+#cp ~/Pictures/aqua/aqua_day.jpg ~/Pictures/fade/
+
+cp ~/.day-hyper.js ~/.hyper.js
+osascript ~/Scripts/wallchange.applescript
+osascript ~/Scripts/light_menu.applescript
