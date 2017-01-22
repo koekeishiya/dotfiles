@@ -6,22 +6,22 @@ module.exports = {
     // },
 
     // default font size in pixels for all tabs
-    fontSize: 10,
+    fontSize: 9,
 
     // font family with optional fallbacks
     fontFamily: '"Input Mono", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(127,127,127,0.60)',
+    cursorColor: 'rgba(192,177,139,0.60)',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
 
     // color of the text
-    foregroundColor: '#d5c4a1',
+    foregroundColor: '#c0b18b',
 
     // terminal background color
-    backgroundColor: '#1f1f1f',
+    backgroundColor: '#1b1b1b',
 
     // border color (window, tabs)
     borderColor: 'rgba(0,0,0,0)',
@@ -52,8 +52,10 @@ module.exports = {
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
+    /*
+    */
     colors: {
-      black: '#1f1f1f',
+      black: '#1b1b1b',
       red: '#d75f5f',
       green: '#b8bb26',
       yellow: '#af865a',
@@ -89,7 +91,7 @@ module.exports = {
       lightCyan: '#00ffff',
       lightWhite: '#504945',
     },
-    */
+     */
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -122,7 +124,7 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyperminimal",
-    "hyper-simple-vibrancy",
+    /*"hyper-simple-vibrancy",*/
   ],
 
   // in development, you can create a directory under
