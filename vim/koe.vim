@@ -45,5 +45,6 @@ hi Search cterm=bold ctermbg=15 guifg=Black gui=bold guibg=White
 hi Visual ctermbg=15 cterm=NONE
 hi PreProc ctermfg=Magenta guifg=Magenta
 hi MatchParen cterm=bold ctermbg=NONE ctermfg=8
+hi StatusLine ctermbg=NONE cterm=NONE
 
 " vim: sw=2
