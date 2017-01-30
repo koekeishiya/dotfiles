@@ -298,9 +298,9 @@ tree + shift - o        :   kwmc window -s next
 # default
 cmd - return            :   open -na /Applications/Hyper.app
 
-cmd - h                  :   kwmc display -c horizontal
-cmd - v                  :   kwmc display -c vertical
-cmd - o                  :   kwmc display -c optimal
+rcmd - h                :   kwmc display -c horizontal
+rcmd - v                :   kwmc display -c vertical
+rcmd - o                :   kwmc display -c optimal
 
 cmd + alt + ctrl - m    :   kwmc window -mk focused
 cmd + alt + ctrl - h    :   kwmc window -mk west wrap
