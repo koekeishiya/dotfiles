@@ -4,8 +4,21 @@
 #                   <keysym> [!] [<app list>] [->] : <command>
 #                   where
 #                       <keysym>   = mode + mod + ... + mod - literal
-#                       <keysym>   = mode + mod + ... + mod - keycode (must have 0x prefix)
-#                       <keysym>   = mode + mod + ... + mod (modifier only binding)
+#
+#                       <keysym>   = mode + mod + ... + mod - keycode
+#                                    keycode must have 0x prefix
+#
+#                       <keysym>   = mode + mod + ... + mod - button#
+#                                    replace '#' with mouse-button id; id >= 3
+#
+#                       modifier only binding
+#                       <keysym>   = mode + mod + ... + mod
+#
+#                       literal only binding
+#                       <keysym>   = - literal
+#
+#                       keycode only binding
+#                       <keysym>   = - keycode
 #
 #                       [<app,
 #                         app,     = optional list '[app1, ..., appN]' of applications
@@ -23,14 +36,16 @@
 #                                    'passthrough'. this causes the key to be passed
 #                                    through to the system, instead of being consumed.
 #
-#                       <command>  = command is executed through '/bin/bash -c' and
-#                                    follows valid shell syntax. Thus, to execute
-#                                    multiple comands, use the ';' delimeter.
+#                       <command>  = command is executed through '$SHELL -c' and
+#                                    follows valid shell syntax. if the $SHELL environment
+#                                    variable is not set, it will default to '/bin/bash'.
+#                                    when bash is used, the ';' delimeter can be specified
+#                                    to chain commands.
 #
-#                                    To allow a command to extend into multiple lines,
+#                                    to allow a command to extend into multiple lines,
 #                                    prepend '\' at the end of the previous line.
 #
-#                                    An EOL character signifies the end of the bind.
+#                                    an EOL character signifies the end of the bind.
 
 # NOTE(koekeishiya) Example of passthrough
 # cmd - m -> : echo "alert and minimize window" | alerter -title Test passthrough -timeout 2
@@ -63,10 +78,12 @@
 # lcmd   : khd -p "shift + alt - 8"
 # rcmd   : khd -p "shift + alt - 9"
 
+# NOTE(koekeishiya) Bind mouse-buttons
+# - button3 : khd -w "mouse-button 3 pressed"
+# - button4 : khd -w "mouse-button 4 pressed"
+
 # TODO(koekeishiya): possibly allow combined syntax such as
 # [switcher,ytd] + ctrl - f : khd -e "mode activate default"
-
-
 
 # vi-mode for non-terminal applications
 
@@ -109,6 +126,13 @@ khd kwm on
 
 
 
+
+# suppress unregistered keybinds outside default mode
+# khd void_unlisted_bind off
+
+
+
+
 # set border color for different modes
 khd mode default color 0xddd5c4a1
 khd mode switcher color 0xddbdd322
@@ -132,7 +156,7 @@ switcher - w            :   khd -e "mode activate ytd"
 switcher - a            :   khd -e "mode activate swap"
 switcher - s            :   khd -e "mode activate space"
 switcher - d            :   khd -e "mode activate tree"
-switcher - q            :   khd -e "mode activate info"
+# switcher - q            :   khd -e "mode activate info"
 
 
 
@@ -195,10 +219,10 @@ swap - k                :   kwmc window -s north
 swap - l                :   kwmc window -s east
 swap - m                :   kwmc window -s mark
 
+swap + shift - h        :   kwmc window -m west
+swap + shift - j        :   kwmc window -m south
 swap + shift - k        :   kwmc window -m north
 swap + shift - l        :   kwmc window -m east
-swap + shift - j        :   kwmc window -m south
-swap + shift - h        :   kwmc window -m west
 swap + shift - m        :   kwmc window -m mark
 
 swap - 1                :   kwmc window -m space 1
@@ -245,9 +269,10 @@ space + shift - p       :   kwmc space -p decrease all
 tree - f                :   kwmc window -z fullscreen
 tree - d                :   kwmc window -z parent
 tree - w                :   kwmc window -t focused
+tree - e                :   kwmc window -t next; khd -e "mode activate default"
 tree - r                :   kwmc tree rotate 90
 
-tree - s                :   kwmc window -c split - mode toggle;\
+tree - s                :   kwmc window -c split-mode toggle;\
                             khd -e "mode activate default"
 
 tree - c                :   kwmc window -c type toggle;\
@@ -273,6 +298,10 @@ tree + shift - o        :   kwmc window -s next
 # default
 cmd - return            :   open -na /Applications/Hyper.app
 
+cmd - h                  :   kwmc display -c horizontal
+cmd - v                  :   kwmc display -c vertical
+cmd - o                  :   kwmc display -c optimal
+
 cmd + alt + ctrl - m    :   kwmc window -mk focused
 cmd + alt + ctrl - h    :   kwmc window -mk west wrap
 cmd + alt + ctrl - l    :   kwmc window -mk east wrap
@@ -283,6 +312,12 @@ cmd - 0x2A              :   khd -w "aasvi93@hotmail.com"
 cmd - 7                 :   khd -p "alt + shift - 7"
 cmd - 8                 :   khd -p "alt + shift - 8"
 cmd - 9                 :   khd -p "alt + shift - 9"
+cmd - q [ Firefox ]     :   khd -p "cmd - l"
+# cmd - 8                 :   khd -w "{"
+# cmd - 9                 :   khd -w "}"
 
 # ctrl + alt - right      :   khd -p "cmd + ctrl - right"
 # ctrl + alt - left       :   khd -p "cmd + ctrl - left"
+# cmd - 0x32 : khd -w "∀"
+# cmd - 0x32 : khd -w "üÜäÄöÖ# "
+# ctrl + alt - left      :   kwmc display -f 0; sleep 0.1; kwmc space -fExperimental 1
