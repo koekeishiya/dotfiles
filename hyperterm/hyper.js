@@ -21,7 +21,7 @@ module.exports = {
     foregroundColor: '#c0b18b',
 
     // terminal background color
-    backgroundColor: '#1b1b1b',
+    backgroundColor: 'rgba(19,19,19,0.9)', //'#1b1b1b',
 
     // border color (window, tabs)
     borderColor: 'rgba(0,0,0,0)',
@@ -57,20 +57,20 @@ module.exports = {
     colors: {
       black: '#2f2f2f',
       red: '#d75f5f',
-      green: '#b8bb26',
-      yellow: '#af865a',
-      blue: '#535c5c',
+      green: '#8fee96',
+      yellow: '#cd950c',
+      blue: '#458588',
       magenta: '#775759',
-      cyan: '#6d715e',
+      cyan: '#84edb9',
       white: '#c0b18b',
-      lightBlack: '#4a3637',
+      lightBlack: '#4f4f4f',
       lightRed: '#d75f5f',
-      lightGreen: '#7b8748',
+      lightGreen: '#e1f837',
       lightYellow: '#af865a',
       lightBlue: '#535c5c',
       lightMagenta: '#775759',
-      lightCyan: '#6d715e',
-      lightWhite: '#c0b18b',
+      lightCyan: '#84edb9',
+      lightWhite: '#d5c4a1',
     },
     /*
     colors: {

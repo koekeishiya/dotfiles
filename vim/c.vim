@@ -6,5 +6,6 @@ syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
 hi myNote ctermfg=Green ctermbg=NONE cterm=bold,underline
 syn match myNote /NOTE/ containedin=cComment,cCommentL
 
-hi def cCustomFunc  gui=bold ctermfg=DarkBlue guifg=yellowgreen
+" this is set in color theme
+" hi def cCustomFunc  gui=bold ctermfg=DarkBlue guifg=yellowgreen
 hi def link cCustomClass Function
