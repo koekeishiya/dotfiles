@@ -1,10 +1,5 @@
 module.exports = {
   config: {
-    // hyperclean makes the window borderless and we want to hide tabs
-    // hyperclean: {
-        // hideTabs: true
-    // },
-
     // default font size in pixels for all tabs
     fontSize: 9,
 
@@ -21,7 +16,8 @@ module.exports = {
     foregroundColor: '#c0b18b',
 
     // terminal background color
-    backgroundColor: 'rgba(19,19,19,0.9)', //'#1b1b1b',
+    backgroundColor: '#191919',
+    // backgroundColor: 'rgba(19,19,19,0.9)',
 
     // border color (window, tabs)
     borderColor: 'rgba(0,0,0,0)',
@@ -52,8 +48,6 @@ module.exports = {
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
-    /*
-    */
     colors: {
       black: '#2f2f2f',
       red: '#d75f5f',
@@ -72,26 +66,6 @@ module.exports = {
       lightCyan: '#84edb9',
       lightWhite: '#d5c4a1',
     },
-    /*
-    colors: {
-      black: '#1b1b1b',
-      red: '#d75f5f',
-      green: '#b8bb26',
-      yellow: '#cd950c',
-      blue: '#458588',
-      magenta: '#cc80a6',
-      cyan: '#00ffff',
-      white: '#d5c4a1',
-      lightBlack: '#505050',
-      lightRed: '#cc241d',
-      lightGreen: '#7aab7d',
-      lightYellow: '#cd950c',
-      lightBlue: '#83a598',
-      lightMagenta: '#cc80a6',
-      lightCyan: '#00ffff',
-      lightWhite: '#504945',
-    },
-     */
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -124,7 +98,6 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyperminimal",
-    /*"hyper-simple-vibrancy",*/
   ],
 
   // in development, you can create a directory under
