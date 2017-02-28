@@ -9,10 +9,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'critiqjo/lldb.nvim'
+" Plugin 'critiqjo/lldb.nvim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'morhetz/gruvbox'
+Plugin 'majutsushi/tagbar'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,14 +42,15 @@ vnoremap √ :m '>+1<CR>gv=gv
 vnoremap ª :m '<-2<CR>gv=gv
 nnoremap <F1> :cprev<cr>
 nnoremap <F2> :cnext<cr>
-nmap <F4> <Plug>LLBreakSwitch
-nnoremap <F5> :LLmode debug<CR>
-nnoremap <F6> :LL step<CR>
-nnoremap <F7> :LL next<CR>
-nnoremap <F8> :LL continue<CR>
-nnoremap <F9> :LL process interrupt<CR>
-nnoremap <F11> :silent make\|cwindow\|redraw!<cr>
-nnoremap <F12> :silent make install\|cwindow\|redraw!<cr>
+nnoremap <F3> :silent make\|cwindow\|redraw!<cr>
+nnoremap <F4> :silent make install\|cwindow\|redraw!<cr>
+nmap <F5> :TagbarToggle<CR>
+" nmap <F4> <Plug>LLBreakSwitch
+" nnoremap <F5> :LLmode debug<CR>
+" nnoremap <F6> :LL step<CR>
+" nnoremap <F7> :LL next<CR>
+" nnoremap <F8> :LL continue<CR>
+" nnoremap <F9> :LL process interrupt<CR>
 
 if has('nvim')
     tnoremap <Esc> <c-\><c-n>
@@ -56,7 +58,8 @@ endif
 
 let mapleader = ','
 
-let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+"let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+let g:python_host_prog = '/usr/local/bin/python'
 
 
 "tab adds 4spaces
@@ -134,10 +137,45 @@ abbreviate cargs int ParseArguments(int Count, char **Args)
             \<CR>while((Option = getopt_long(Count, Args, Short, Long, NULL)) != -1)
             \<CR>{<CR>switch(Option)<CR>{<CR>}<CR>}<CR><CR>return 0;<CR>}
 
+" Objective-C definition for tagbar
+let g:tagbar_type_objc = {
+    \ 'ctagstype' : 'ObjectiveC',
+    \ 'kinds'     : [
+        \ 'i:interface',
+        \ 'I:implementation',
+        \ 'p:Protocol',
+        \ 'm:Object_method',
+        \ 'c:Class_method',
+        \ 'v:Global_variable',
+        \ 'F:Object field',
+        \ 'f:function',
+        \ 'p:property',
+        \ 't:type_alias',
+        \ 's:type_structure',
+        \ 'e:enumeration',
+        \ 'M:preprocessor_macro',
+    \ ],
+    \ 'sro'        : ' ',
+    \ 'kind2scope' : {
+        \ 'i' : 'interface',
+        \ 'I' : 'implementation',
+        \ 'p' : 'Protocol',
+        \ 's' : 'type_structure',
+        \ 'e' : 'enumeration'
+    \ },
+    \ 'scope2kind' : {
+        \ 'interface'      : 'i',
+        \ 'implementation' : 'I',
+        \ 'Protocol'       : 'p',
+        \ 'type_structure' : 's',
+        \ 'enumeration'    : 'e'
+    \ }
+    \ }
+
 let macvim_skip_colorscheme=0
 let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 syntax enable
-compiler gcc
+" compiler gcc
 
 colorscheme koe
