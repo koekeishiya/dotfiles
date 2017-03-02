@@ -90,6 +90,7 @@ set cino==0             " disable retarded indentation after case labels
 "set cursorline
 "let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
 "set noshowmatch         " Don't match parentheses/brackets
+set laststatus=2
 set noshowcmd
 set noshowmode
 set nocursorline        " Don't paint cursor line
@@ -175,6 +176,18 @@ let g:tagbar_type_objc = {
 let macvim_skip_colorscheme=0
 let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
+
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_close_button = 0
+
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 syntax enable
 " compiler gcc
 
