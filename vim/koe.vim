@@ -71,17 +71,17 @@ hi Identifier ctermfg=Yellow guifg=#4f4f4f
 hi cCustomFunc ctermfg=DarkBlue guifg=#4f4f4f
 
 hi Statement ctermfg=Yellow guifg=#4f4f4f
-hi Operator ctermfg=Red guifg=Green
+hi Operator ctermfg=Magenta guifg=Green
 
 hi Type ctermfg=White guifg=Green
-hi StorageClass ctermfg=Yellow guifg=#4f4f4f
+hi StorageClass ctermfg=Magenta guifg=#4f4f4f
 hi Structure ctermfg=Yellow guifg=Green
 
-hi Constant ctermfg=Red guifg=DarkGCyan
+hi Constant ctermfg=Yellow guifg=DarkGCyan
 hi String ctermfg=DarkGray guifg=DarkGray
 hi Character ctermfg=DarkGray guifg=DarkGray
-hi Number ctermfg=Red guifg=DarkCyan
-hi Boolean ctermfg=Red guifg=Green
+hi Number ctermfg=Yellow guifg=DarkCyan
+hi Boolean ctermfg=Yellow guifg=Green
 
 hi Special ctermfg=DarkGray guifg=DarkGray
 
@@ -101,7 +101,7 @@ hi VertSplit ctermbg=DarkYellow ctermfg=Black guifg=Black guibg=Green
 hi Search cterm=bold ctermfg=Black ctermbg=DarkRed guifg=Black gui=bold guibg=DarkRed
 hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
 
-hi PreProc ctermfg=Red guifg=Green
+hi PreProc ctermfg=Magenta guifg=Green
 hi MatchParen cterm=bold ctermbg=NONE ctermfg=DarkGreen
 
 hi StatusLine ctermfg=Black ctermbg=DarkBlue guifg=Black guibg=DarkBlue
