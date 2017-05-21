@@ -67,40 +67,42 @@ hi Pmenu ctermfg=White ctermbg=Black guifg=White guibg=Black
 hi Normal guifg=White guibg=Black
 hi Comment ctermfg=DarkGray guifg=DarkGray
 
-hi Identifier ctermfg=8 guifg=#4f4f4f
-hi cCustomFunc ctermfg=8 guifg=#4f4f4f
+hi Identifier ctermfg=Yellow guifg=#4f4f4f
+hi cCustomFunc ctermfg=DarkBlue guifg=#4f4f4f
 
-hi Statement ctermfg=8 guifg=#4f4f4f
-hi Operator ctermfg=DarkGreen guifg=DarkGreen
+hi Statement ctermfg=Yellow guifg=#4f4f4f
+hi Operator ctermfg=Red guifg=Green
 
-hi Type ctermfg=DarkGreen guifg=DarkGreen
-hi StorageClass ctermfg=8 guifg=#4f4f4f
-hi Structure ctermfg=DarkGreen guifg=DarkGreen
+hi Type ctermfg=White guifg=Green
+hi StorageClass ctermfg=Yellow guifg=#4f4f4f
+hi Structure ctermfg=Yellow guifg=Green
 
-hi Constant ctermfg=DarkCyan guifg=DarkGCyan
+hi Constant ctermfg=Red guifg=DarkGCyan
 hi String ctermfg=DarkGray guifg=DarkGray
 hi Character ctermfg=DarkGray guifg=DarkGray
-hi Number ctermfg=DarkCyan guifg=DarkCyan
-hi Boolean ctermfg=DarkGreen guifg=DarkGreen
+hi Number ctermfg=Red guifg=DarkCyan
+hi Boolean ctermfg=Red guifg=Green
 
 hi Special ctermfg=DarkGray guifg=DarkGray
 
 hi SignColumn ctermbg=Black guibg=Black
 hi lineNr ctermfg=DarkGray guifg=DarkGray
 
-hi Todo ctermfg=Red guifg=Red ctermbg=NONE guibg=NONE cterm=bold,underline gui=bold,underline
+hi Todo ctermfg=Red guifg=Red ctermbg=NONE guibg=NONE cterm=bold gui=bold,underline
+hi myNote ctermfg=DarkGray ctermbg=NONE cterm=bold
+
 hi Error ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
 
 hi TabLine ctermbg=Black ctermfg=DarkBlue guibg=Black guifg=DarkBlue
 hi TabLineSel ctermfg=DarkRed guifg=DarkRed
 hi TabLineFill ctermfg=Black guifg=Black
-hi VertSplit ctermbg=DarkGreen ctermfg=Black guifg=Black guibg=DarkGreen
+hi VertSplit ctermbg=DarkYellow ctermfg=Black guifg=Black guibg=Green
 
 hi Search cterm=bold ctermfg=Black ctermbg=DarkRed guifg=Black gui=bold guibg=DarkRed
 hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
 
-hi PreProc ctermfg=DarkGreen guifg=DarkGreen
-hi MatchParen cterm=bold ctermbg=NONE ctermfg=8
+hi PreProc ctermfg=Red guifg=Green
+hi MatchParen cterm=bold ctermbg=NONE ctermfg=DarkGreen
 
 hi StatusLine ctermfg=Black ctermbg=DarkBlue guifg=Black guibg=DarkBlue
 hi StatusLineNC ctermfg=Black ctermbg=DarkBlue guifg=Black guibg=DarkBlue

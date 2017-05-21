@@ -1,18 +1,31 @@
-colors: {
-  black: '#2f2f2f',
-  red: '#d75f5f',
-  green: '#8fee96',
-  yellow: '#cd950c',
-  blue: '#458588',
-  magenta: '#775759',
-  cyan: '#84edb9',
-  white: '#c0b18b',
-  lightBlack: '#4f4f4f',
-  lightRed: '#d75f5f',
-  lightGreen: '#e1f837',
-  lightYellow: '#af865a',
-  lightBlue: '#535c5c',
-  lightMagenta: '#775759',
-  lightCyan: '#84edb9',
-  lightWhite: '#d5c4a1',
-},
+# black
+color0   #2f2f2f
+color8   #4f4f4f
+
+# red
+color1   #d75f5f
+color9   #d75f5f
+
+# green
+color2    #d4d232
+color10   #8fee96
+
+# yellow
+color3    #af865a
+color11   #cd950c
+
+# blue
+color4   #535c5c
+color12  #458588
+
+# magenta
+color5   #775759
+color13  #775759
+
+# cyan
+color6   #84edb9
+color14  #84edb9
+
+# white
+color7   #c0b18b
+color15  #d5c4a1
