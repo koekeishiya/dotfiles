@@ -96,7 +96,7 @@ hi Error ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
 hi TabLine ctermbg=Black ctermfg=DarkBlue guibg=Black guifg=DarkBlue
 hi TabLineSel ctermfg=DarkRed guifg=DarkRed
 hi TabLineFill ctermfg=Black guifg=Black
-hi VertSplit ctermbg=DarkYellow ctermfg=Black guifg=Black guibg=Green
+hi VertSplit ctermbg=Black ctermfg=Black guifg=Black guibg=Green
 
 hi Search cterm=bold ctermfg=Black ctermbg=DarkRed guifg=Black gui=bold guibg=DarkRed
 hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
