@@ -64,7 +64,7 @@ hi YcmErrorSection ctermbg=Black guibg=Black
 hi YcmErrorSign ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
 hi Pmenu ctermfg=White ctermbg=Black guifg=White guibg=Black
 
-hi Normal guifg=White guibg=Black
+hi Normal guifg=7 guibg=Black
 hi Comment ctermfg=DarkGray guifg=DarkGray
 
 hi Identifier ctermfg=Yellow guifg=#4f4f4f
@@ -73,7 +73,7 @@ hi cCustomFunc ctermfg=DarkBlue guifg=#4f4f4f
 hi Statement ctermfg=Yellow guifg=#4f4f4f
 hi Operator ctermfg=Magenta guifg=Green
 
-hi Type ctermfg=White guifg=Green
+hi Type ctermfg=7 guifg=Green
 hi StorageClass ctermfg=Magenta guifg=#4f4f4f
 hi Structure ctermfg=Yellow guifg=Green
 
