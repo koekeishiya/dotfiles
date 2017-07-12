@@ -9,7 +9,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/deoplete.nvim'
-" Plugin 'critiqjo/lldb.nvim'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-airline/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'morhetz/gruvbox'
@@ -124,6 +124,10 @@ command! -nargs=0 Cclear call setqflist([]) | cclose
 
 command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
 
+abbreviate cincludes #include <stdio.h>
+           \<CR>#include <stdlib.h>
+           \<CR>#include <stdint.h>
+
 abbreviate cmain int main(int Count, char **Args)
             \<CR>{<CR>return EXIT_SUCCESS;<CR>}<UP><UP>
 
@@ -138,42 +142,6 @@ abbreviate cargs int ParseArguments(int Count, char **Args)
             \<CR>while((Option = getopt_long(Count, Args, Short, Long, NULL)) != -1)
             \<CR>{<CR>switch(Option)<CR>{<CR>}<CR>}<CR><CR>return 0;<CR>}
 
-" Objective-C definition for tagbar
-let g:tagbar_type_objc = {
-    \ 'ctagstype' : 'ObjectiveC',
-    \ 'kinds'     : [
-        \ 'i:interface',
-        \ 'I:implementation',
-        \ 'p:Protocol',
-        \ 'm:Object_method',
-        \ 'c:Class_method',
-        \ 'v:Global_variable',
-        \ 'F:Object field',
-        \ 'f:function',
-        \ 'p:property',
-        \ 't:type_alias',
-        \ 's:type_structure',
-        \ 'e:enumeration',
-        \ 'M:preprocessor_macro',
-    \ ],
-    \ 'sro'        : ' ',
-    \ 'kind2scope' : {
-        \ 'i' : 'interface',
-        \ 'I' : 'implementation',
-        \ 'p' : 'Protocol',
-        \ 's' : 'type_structure',
-        \ 'e' : 'enumeration'
-    \ },
-    \ 'scope2kind' : {
-        \ 'interface'      : 'i',
-        \ 'implementation' : 'I',
-        \ 'Protocol'       : 'p',
-        \ 'type_structure' : 's',
-        \ 'enumeration'    : 'e'
-    \ }
-    \ }
-
-let macvim_skip_colorscheme=0
 let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 
