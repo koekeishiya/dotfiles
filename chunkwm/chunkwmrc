@@ -15,7 +15,7 @@ chunkc core::plugin_dir ~/.chunkwm_plugins
 chunkc core::hotload 1
 
 #
-# NOTE: The following are config variables for the chunkwm-tiling plugin
+# NOTE: the following are config variables for the chunkwm-tiling plugin.
 #
 
 chunkc set global_desktop_mode           bsp
@@ -55,19 +55,29 @@ chunkc set window_float_next             0
 chunkc set window_float_center           1
 chunkc set window_region_locked          1
 
+#
+# NOTE: shell commands require escaped quotes
+#       to pass value containing a whitespace.
+#
+# chunkc set mouse_modifier              \"cmd shift\"
+chunkc set mouse_modifier                fn
+
 chunkc set preselect_border_color        0xffffff00
 chunkc set preselect_border_width        4
 chunkc set preselect_border_radius       0
 
-# signal dock to make windows topmost when floated
-# requires chwm-sa (https://github.com/koekeishiya/chwm-sa)
+#
+# NOTE: these settings require chwm-sa.
+#       (https://github.com/koekeishiya/chwm-sa)
+#
+
 chunkc set window_float_topmost          1
 chunkc set window_fade_inactive          1
 chunkc set window_fade_alpha             0.85
 chunkc set window_fade_duration          0.5
 
 #
-# NOTE: The following are config variables for the chunkwm-border plugin
+# NOTE: the following are config variables for the chunkwm-border plugin.
 #
 
 chunkc set focused_border_color          0xffc0b18b
@@ -77,20 +87,17 @@ chunkc set focused_border_skip_floating  0
 
 #
 # NOTE: specify plugins to load when chunkwm starts.
+#       if chunkc plugin_dir is not set, the absolutepath is necessary.
 #
 
 chunkc core::load tiling.so
 chunkc core::load ffm.so
 chunkc core::load border.so
 
+#
+# NOTE: shell commands require escaped quotes
+#       to pass value containing a whitespace.
+#
+
 chunkc tiling::rule --owner \"System Preferences\" --state tile
 chunkc tiling::rule --owner Finder --name Copy --state float
-
-#
-# NOTE: if chunkc plugin_dir is not set, the absolutepath is necessary.
-#
-
-# chunkc core::load ~/.chunkwm_plugins/tiling.so
-# chunkc core::load ~/.chunkwm_plugins/ffm.so
-# chunkc core::load ~/.chunkwm_plugins/border.so
-
