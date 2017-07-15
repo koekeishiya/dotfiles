@@ -68,13 +68,13 @@ hi Normal guifg=7 guibg=Black
 hi Comment ctermfg=DarkGray guifg=DarkGray
 
 hi Identifier ctermfg=Yellow guifg=#4f4f4f
-hi cCustomFunc ctermfg=DarkBlue guifg=#4f4f4f
+hi cCustomFunc ctermfg=8 guifg=#4f4f4f
 
 hi Statement ctermfg=Yellow guifg=#4f4f4f
-hi Operator ctermfg=Magenta guifg=Green
+hi Operator ctermfg=Yellow guifg=Green
 
 hi Type ctermfg=7 guifg=Green
-hi StorageClass ctermfg=Magenta guifg=#4f4f4f
+hi StorageClass ctermfg=Yellow guifg=#4f4f4f
 hi Structure ctermfg=Yellow guifg=Green
 
 hi Constant ctermfg=Yellow guifg=DarkGCyan
@@ -90,10 +90,11 @@ hi lineNr ctermfg=DarkGray guifg=DarkGray
 
 hi Todo ctermfg=Red guifg=Red ctermbg=NONE guibg=NONE cterm=bold gui=bold,underline
 hi myNote ctermfg=DarkGray ctermbg=NONE cterm=bold
+hi myStatic ctermfg=Yellow
 
 hi Error ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
 
-hi TabLine ctermbg=Black ctermfg=DarkBlue guibg=Black guifg=DarkBlue
+hi TabLine ctermbg=Black ctermfg=8 guibg=Black guifg=8
 hi TabLineSel ctermfg=DarkRed guifg=DarkRed
 hi TabLineFill ctermfg=Black guifg=Black
 hi VertSplit ctermbg=Black ctermfg=Black guifg=Black guibg=Green
@@ -104,7 +105,7 @@ hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
 hi PreProc ctermfg=Magenta guifg=Green
 hi MatchParen cterm=bold ctermbg=NONE ctermfg=DarkGreen
 
-hi StatusLine ctermfg=Black ctermbg=DarkBlue guifg=Black guibg=DarkBlue
-hi StatusLineNC ctermfg=Black ctermbg=DarkBlue guifg=Black guibg=DarkBlue
+hi StatusLine ctermfg=Black ctermbg=8 guifg=Black guibg=8
+hi StatusLineNC ctermfg=Black ctermbg=8 guifg=Black guibg=8
 hi CursorLine cterm=NONE ctermbg=Black gui=NONE guibg=Black
 hi StatusLine ctermbg=NONE cterm=NONE
