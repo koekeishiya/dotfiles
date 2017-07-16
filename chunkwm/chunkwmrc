@@ -59,10 +59,10 @@ chunkc set window_region_locked          1
 # NOTE: shell commands require escaped quotes
 #       to pass value containing a whitespace.
 #
-# chunkc set mouse_modifier              \"cmd shift\"
-chunkc set mouse_modifier                fn
+chunkc set mouse_modifier              \"cmd shift\"
+# chunkc set mouse_modifier                fn
 
-chunkc set preselect_border_color        0xffffff00
+chunkc set preselect_border_color        0xff8fee96
 chunkc set preselect_border_width        4
 chunkc set preselect_border_radius       0
 
