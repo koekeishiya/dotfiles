@@ -10,14 +10,14 @@
 
 /*
     Modified by: Koekeishiya
-    Compatibility: Firefox 48.0.2
+    Compatibility: Firefox 50.1.0
 */
 
 :root {
     /* TAB VARIABLES */
-    --bg-nav: #101010;
-    --bg-light: #1b1b1b; --bg-dark: #1b1b1b; --bg-selected: #1b1b1b;
-    --fg-light: #d5c4a1; --fg-dark: #7f7f7f; --fg-selected: #d5c4a1 /*--fg-selected: #FF456F*/;
+    --bg-nav: #151515;
+    --bg-light: #202020; --bg-dark: #202020; --bg-selected: #202020;
+    --fg-light: #c0b18b; --fg-dark: #7f7f7f; --fg-selected: #c0b18b /*--fg-selected: #FF456F*/;
     --tab-triangle-correction: 0px; --tab-triangle-height: 16px;
     --tab-selected-border: #458588;
     --tab-height: 20px; --tab-icon-size: 10px; --tab-strip-margin: -11px; --tab-overlap: -5px;
@@ -26,7 +26,7 @@
 
     /* URL VARIABLES */
     --url-background: var(--bg-nav); --url-color: var(--fg-light);
-    --url-focus: #1b1b1b;
+    --url-focus: #202020;
     --url-height: 18px; --url-right-margin: 6px;
     --url-fonts: "Input Mono","Courier New", "Lemon",monospace,"Dejavu Sans"; --url-font-size: 5.75pt;
     --url-text-align: center; /* left | center | right */
@@ -177,7 +177,7 @@
         margin-left: 160px !important;/**/
     }
     #TabsToolbar::after { display: none !important; }
-    .tabbrowser-tab::before, .tabbrowser-tab::after { background: none !important; opacity: 1 !important; }
+    .tabbrowser-tab::before, .tabbrowser-tab::after { background: none !important; opacity: 1 !important; display: none !important; }
 
     /*browser, #navigator-toolbox { -moz-appearance: none !important; background: transparent !important; }*/
 
@@ -263,4 +263,4 @@ tabbrowser tabpanels, #appcontent > #content { background: var(--bg-light) !impo
 /* Set dark text in light textareas
 @-moz-document regexp("https?://(?!(localhost|twily.info|.*.4chan.org|.*.youtube.com)).*") {
     input, textarea { color: #222628 !important; -moz-appearance: none !important; }
-}*/
+    }*/
