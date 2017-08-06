@@ -34,12 +34,6 @@ if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap jk <Esc>
-nnoremap √ :m .+1<CR>==
-nnoremap ª :m .-2<CR>==
-inoremap √ <Esc>:m .+1<CR>==gi
-inoremap ª <Esc>:m .-2<CR>==gi
-vnoremap √ :m '>+1<CR>gv=gv
-vnoremap ª :m '<-2<CR>gv=gv
 nnoremap <F1> :cprev<cr>
 nnoremap <F2> :cnext<cr>
 nnoremap <F3> :silent make\|cwindow\|redraw!<cr>
@@ -67,9 +61,6 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-let g:deoplete#enable_at_startup = 1
-
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=2
@@ -142,6 +133,8 @@ abbreviate cargs int ParseArguments(int Count, char **Args)
             \<CR>while((Option = getopt_long(Count, Args, Short, Long, NULL)) != -1)
             \<CR>{<CR>switch(Option)<CR>{<CR>}<CR>}<CR><CR>return 0;<CR>}
 
+let g:deoplete#enable_at_startup = 1
+
 let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 
@@ -156,7 +149,8 @@ let g:airline#extensions#tabline#show_close_button = 0
 
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
-syntax enable
-" compiler gcc
 
-colorscheme koe
+syntax enable
+
+"colorscheme koe
+colorscheme koe.new

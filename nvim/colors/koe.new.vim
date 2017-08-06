@@ -63,32 +63,32 @@ let colors_name = "koe"
 hi Pmenu ctermfg=7 ctermbg=Black guifg=White guibg=Black
 
 hi Normal guifg=7 guibg=Black
-hi Comment ctermfg=DarkGray guifg=DarkGray
+hi Comment ctermfg=DarkGreen guifg=DarkGray
 
-hi Identifier ctermfg=Yellow guifg=#4f4f4f
-hi cCustomFunc ctermfg=8 guifg=#4f4f4f
+hi Identifier ctermfg=White guifg=#4f4f4f
+hi cCustomFunc ctermfg=DarkGray guifg=#4f4f4f
 
-hi Statement ctermfg=Yellow guifg=#4f4f4f
-hi Operator ctermfg=Yellow guifg=Green
+hi Statement ctermfg=White guifg=#4f4f4f
+hi Operator ctermfg=White guifg=Green
 
-hi Type ctermfg=7 guifg=Green
-hi StorageClass ctermfg=Yellow guifg=#4f4f4f
-hi Structure ctermfg=Yellow guifg=Green
+hi Type ctermfg=Green guifg=Green
+hi StorageClass ctermfg=White guifg=#4f4f4f
+hi Structure ctermfg=White guifg=Green
 
-hi Constant ctermfg=Yellow guifg=DarkGCyan
-hi String ctermfg=DarkGray guifg=DarkGray
-hi Character ctermfg=DarkGray guifg=DarkGray
-hi Number ctermfg=Yellow guifg=DarkCyan
-hi Boolean ctermfg=Yellow guifg=Green
+hi Constant ctermfg=White guifg=DarkGCyan
+hi String ctermfg=Gray guifg=DarkGray
+hi Character ctermfg=Gray guifg=DarkGray
+hi Number ctermfg=Cyan guifg=DarkCyan
+hi Boolean ctermfg=Cyan guifg=Green
 
-hi Special ctermfg=DarkGray guifg=DarkGray
+hi Special ctermfg=Gray guifg=DarkGray
 
 hi SignColumn ctermbg=Black guibg=Black
-hi lineNr ctermfg=DarkGray guifg=DarkGray
+hi lineNr ctermfg=8 guifg=DarkGray
 
-hi Todo ctermfg=Red guifg=Red ctermbg=NONE guibg=NONE cterm=bold gui=bold,underline
-hi myNote ctermfg=DarkGray ctermbg=NONE cterm=bold
-hi myStatic ctermfg=Yellow
+hi Todo ctermfg=DarkGreen guifg=DarkGreen ctermbg=NONE guibg=NONE cterm=bold gui=bold,underline
+hi myNote ctermfg=DarkGreen ctermbg=NONE cterm=bold
+hi myStatic ctermfg=White
 
 hi Error ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
 
