@@ -75,7 +75,7 @@ hi Type ctermfg=Green guifg=Green
 hi StorageClass ctermfg=White guifg=#4f4f4f
 hi Structure ctermfg=White guifg=Green
 
-hi Constant ctermfg=White guifg=DarkGCyan
+hi Constant ctermfg=Cyan guifg=DarkGCyan
 hi String ctermfg=Gray guifg=DarkGray
 hi Character ctermfg=Gray guifg=DarkGray
 hi Number ctermfg=Cyan guifg=DarkCyan
