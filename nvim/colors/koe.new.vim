@@ -101,7 +101,9 @@ hi Search cterm=bold ctermfg=Black ctermbg=DarkRed guifg=Black gui=bold guibg=Da
 hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
 
 hi PreProc ctermfg=Magenta guifg=Green
-hi MatchParen cterm=bold ctermbg=NONE ctermfg=DarkGreen
+hi MatchParen cterm=bold ctermbg=NONE ctermfg=Magenta
+hi multiple_cursors_cursor ctermbg=Magenta
+hi link multiple_cursors_visual Visual
 
 hi StatusLine ctermfg=Black ctermbg=8 guifg=Black guibg=8
 hi StatusLineNC ctermfg=Black ctermbg=8 guifg=Black guibg=8

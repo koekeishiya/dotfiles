@@ -14,6 +14,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
+Plugin 'terryma/vim-multiple-cursors'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -38,6 +39,8 @@ nnoremap <F1> :cprev<cr>
 nnoremap <F2> :cnext<cr>
 nnoremap <F3> :silent make\|cwindow\|redraw!<cr>
 nnoremap <F4> :silent make install\|cwindow\|redraw!<cr>
+nnoremap <silent> <C-j> :MultipleCursorsFind <C-R>/<CR>
+vnoremap <silent> <C-j> :MultipleCursorsFind <C-R>/<CR>
 nmap <F5> :TagbarToggle<CR>
 " nmap <F4> <Plug>LLBreakSwitch
 " nnoremap <F5> :LLmode debug<CR>
@@ -149,6 +152,8 @@ let g:airline#extensions#tabline#show_close_button = 0
 
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+
+let g:multi_cursor_exit_from_insert_mode = 0
 
 syntax enable
 
