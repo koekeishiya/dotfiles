@@ -60,7 +60,7 @@ chunkc set window_region_locked          1
 #       to pass value containing a whitespace.
 #
 chunkc set mouse_modifier              \"cmd shift\"
-#chunkc set mouse_modifier                fn
+# chunkc set mouse_modifier                fn
 
 chunkc set preselect_border_color        0xffd75f5f
 chunkc set preselect_border_width        5
@@ -75,6 +75,7 @@ chunkc set window_float_topmost          0
 chunkc set window_fade_inactive          1
 chunkc set window_fade_alpha             0.85
 chunkc set window_fade_duration          0.25
+chunkc set window_use_cgs_move           1
 
 #
 # NOTE: the following are config variables for the chunkwm-border plugin.
@@ -99,5 +100,6 @@ chunkc core::load ffm.so
 #       to pass value containing a whitespace.
 #
 
+chunkc tiling::rule --owner Spotify --role AXWindow --subrole AXDialog --state tile
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
