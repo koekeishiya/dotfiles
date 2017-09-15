@@ -15,6 +15,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'arakashic/chromatica.nvim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -154,6 +155,10 @@ let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 
 let g:multi_cursor_exit_from_insert_mode = 0
+
+let g:chromatica#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+let g:chromatica#responsive_mode=1
+let g:chromatica#enable_at_startup=1
 
 syntax enable
 

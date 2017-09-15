@@ -67,6 +67,7 @@ hi Comment ctermfg=DarkGreen guifg=DarkGray
 
 hi Identifier ctermfg=White guifg=#4f4f4f
 hi cCustomFunc ctermfg=DarkGray guifg=#4f4f4f
+hi link Function cCustomFunc
 
 hi Statement ctermfg=White guifg=#4f4f4f
 hi Operator ctermfg=White guifg=Green
@@ -101,8 +102,8 @@ hi Search cterm=bold ctermfg=Black ctermbg=DarkRed guifg=Black gui=bold guibg=Da
 hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
 
 hi PreProc ctermfg=Magenta guifg=Green
-hi MatchParen cterm=bold ctermbg=NONE ctermfg=Magenta
-hi multiple_cursors_cursor ctermbg=Magenta
+hi MatchParen cterm=bold ctermbg=NONE ctermfg=Green
+hi multiple_cursors_cursor ctermbg=Green
 hi link multiple_cursors_visual Visual
 
 hi StatusLine ctermfg=Black ctermbg=8 guifg=Black guibg=8
