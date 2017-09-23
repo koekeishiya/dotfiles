@@ -72,7 +72,7 @@ chunkc set preselect_border_radius       0
 #
 
 chunkc set window_float_topmost          0
-chunkc set window_fade_inactive          1
+chunkc set window_fade_inactive          0
 chunkc set window_fade_alpha             0.85
 chunkc set window_fade_duration          0.25
 chunkc set window_use_cgs_move           1
@@ -100,6 +100,9 @@ chunkc core::load ffm.so
 #       to pass value containing a whitespace.
 #
 
+chunkc tiling::rule --owner kitty --role AXWindow --subrole AXDialog --state tile
 chunkc tiling::rule --owner Spotify --role AXWindow --subrole AXDialog --state tile
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
+
+dock-inject
