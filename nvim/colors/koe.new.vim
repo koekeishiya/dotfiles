@@ -101,7 +101,7 @@ hi VertSplit ctermbg=Black ctermfg=Black guifg=Black guibg=Green
 hi Search cterm=bold ctermfg=Black ctermbg=DarkRed guifg=Black gui=bold guibg=DarkRed
 hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
 
-hi PreProc ctermfg=Magenta guifg=Green
+hi PreProc ctermfg=Green guifg=Green
 hi MatchParen cterm=bold ctermbg=NONE ctermfg=Green
 hi multiple_cursors_cursor ctermbg=Green
 hi link multiple_cursors_visual Visual
