@@ -56,10 +56,6 @@ endif
 
 let mapleader = ','
 
-"let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
-let g:python_host_prog = '/usr/local/bin/python'
-
-
 "tab adds 4spaces
 filetype plugin indent on
 set tabstop=4
