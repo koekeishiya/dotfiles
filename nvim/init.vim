@@ -152,7 +152,7 @@ let g:airline#extensions#tagbar#enabled = 1
 
 let g:multi_cursor_exit_from_insert_mode = 0
 
-let g:chromatica#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+let g:chromatica#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 let g:chromatica#responsive_mode=1
 let g:chromatica#enable_at_startup=1
 
