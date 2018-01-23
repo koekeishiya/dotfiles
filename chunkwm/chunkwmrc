@@ -1,6 +1,14 @@
 #!/bin/bash
 
 #
+# NOTE: specify the desired level of logging.
+#
+#       - none, debug, warn, error
+#
+
+chunkc core::log_level warn
+
+#
 # NOTE: specify the absolutepath to the directory to use when
 #       loading a plugin. '~' expansion is supported.
 #
@@ -24,10 +32,10 @@ chunkc set 5_desktop_mode                float
 
 chunkc set 1_desktop_tree                ~/.chunkwm_layouts/dev_1
 
-chunkc set global_desktop_offset_top     20
-chunkc set global_desktop_offset_bottom  20
-chunkc set global_desktop_offset_left    20
-chunkc set global_desktop_offset_right   20
+chunkc set global_desktop_offset_top     40
+chunkc set global_desktop_offset_bottom  40
+chunkc set global_desktop_offset_left    15
+chunkc set global_desktop_offset_right   15
 chunkc set global_desktop_offset_gap     15
 
 chunkc set 1_desktop_offset_top          190
@@ -35,11 +43,6 @@ chunkc set 1_desktop_offset_bottom       190
 chunkc set 1_desktop_offset_left         190
 chunkc set 1_desktop_offset_right        190
 chunkc set 1_desktop_offset_gap          15
-
-chunkc set 3_desktop_offset_top          190
-chunkc set 3_desktop_offset_bottom       190
-chunkc set 3_desktop_offset_left         190
-chunkc set 3_desktop_offset_right        190
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0
@@ -52,7 +55,7 @@ chunkc set bsp_split_ratio               0.5
 chunkc set monitor_focus_cycle           1
 chunkc set window_focus_cycle            monitor
 
-chunkc set mouse_follows_focus           0
+chunkc set mouse_follows_focus           intrinsic
 chunkc set window_float_next             0
 chunkc set window_region_locked          1
 
