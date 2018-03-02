@@ -38,8 +38,8 @@ set cpo&vim
 inoremap jk <Esc>
 nnoremap <F1> :cprev<cr>
 nnoremap <F2> :cnext<cr>
-nnoremap <F3> :silent make\|cwindow\|redraw!<cr>
-nnoremap <F4> :silent make install\|cwindow\|redraw!<cr>
+nnoremap <silent> <F3> :cclose\|cd %:h/..\|make!\|cd %:h\|copen\|redraw!<cr>:normal G<cr>
+nnoremap <silent> <F4> :cclose\|cd %:h/..\|make!\|cd %:h\|redraw!<cr>
 nnoremap <silent> <C-j> :MultipleCursorsFind <C-R>/<CR>
 vnoremap <silent> <C-j> :MultipleCursorsFind <C-R>/<CR>
 nmap <F5> :TagbarToggle<CR>
