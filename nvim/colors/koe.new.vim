@@ -77,12 +77,11 @@ hi StorageClass ctermfg=White guifg=#4f4f4f
 hi Structure ctermfg=White guifg=Green
 
 hi Constant ctermfg=Cyan guifg=DarkGCyan
-hi String ctermfg=Gray guifg=DarkGray
-hi Character ctermfg=Gray guifg=DarkGray
+hi String ctermfg=DarkBlue guifg=DarkBlue
+hi Character ctermfg=DarkBlue guifg=DarkBlue
 hi Number ctermfg=Cyan guifg=DarkCyan
 hi Boolean ctermfg=Cyan guifg=Green
-
-hi Special ctermfg=Gray guifg=DarkGray
+hi Special ctermfg=DarkBlue guifg=DarkBlue
 
 hi SignColumn ctermbg=Black guibg=Black
 hi lineNr ctermfg=8 guifg=DarkGray
