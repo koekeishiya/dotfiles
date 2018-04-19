@@ -29,7 +29,7 @@
     --url-focus: #202020;
     --url-height: 18px; --url-right-margin: 15px;
     --url-fonts: "Input Mono","Courier New", "Lemon",monospace,"Dejavu Sans"; --url-font-size: 5.75pt;
-    --url-text-align: left; /* left | center | right */
+    --url-text-align: center; /* left | center | right */
     --url-position: absolute; /* absolute == top (under tabs) || fixed == bottom of browser */
 
     margin-bottom: 0 /* var(--url-height) */ !important;
