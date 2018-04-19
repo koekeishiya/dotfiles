@@ -15,7 +15,7 @@
 
 :root {
     /* TAB VARIABLES */
-    --bg-nav: #151515;
+    --bg-nav: #202020;
     --bg-light: #202020; --bg-dark: #202020; --bg-selected: #202020;
     --fg-light: #c0b18b; --fg-dark: #7f7f7f; --fg-selected: #c0b18b /*--fg-selected: #FF456F*/;
     --tab-triangle-correction: 0px; --tab-triangle-height: 16px;
@@ -27,9 +27,9 @@
     /* URL VARIABLES */
     --url-background: var(--bg-nav); --url-color: var(--fg-light);
     --url-focus: #202020;
-    --url-height: 18px; --url-right-margin: 6px;
+    --url-height: 18px; --url-right-margin: 15px;
     --url-fonts: "Input Mono","Courier New", "Lemon",monospace,"Dejavu Sans"; --url-font-size: 5.75pt;
-    --url-text-align: center; /* left | center | right */
+    --url-text-align: left; /* left | center | right */
     --url-position: absolute; /* absolute == top (under tabs) || fixed == bottom of browser */
 
     margin-bottom: 0 /* var(--url-height) */ !important;
@@ -80,13 +80,13 @@
         /* --- Uncomment the section below to attach the url-bar to the tab-bar [EXPERIMENTAL] (Require a line in "#TabsToolbar" below) --- */
 
         position: fixed !important; top: 0px !important; left: 6px !important;
-        width: 300px !important; max-width: 300px !important;
+        width: 384px !important; max-width: 384px !important;
         z-index: 100 !important;
         /**/
     }
        #nav-bar-customization-target { width: 100% !important; }
           #urlbar-wrapper {
-              width: 101% !important; margin-top: 0px !important; /* adjust margin-top to ~ -5px if you experience gap */
+              width: 100% !important; margin-top: 0px !important; /* adjust margin-top to ~ -5px if you experience gap */
               position: absolute !important; top: 0px !important; left: 0 !important;
               border-bottom: 0px solid var(--bg-light) !important;
           }
@@ -139,7 +139,7 @@
     .tabbrowser-tab[selected="true"] .tab-stack {
         background: var(--bg-selected) !important; color: var(--fg-selected) !important;
         border-radius: 0px !important; position: relative !important;
-        margin-top: 2px !important;
+        margin-top: 0px !important;
         margin-bottom: 2px !important;
         /* border-bottom: 2px solid var(--tab-selected-border) !important; */
     }
@@ -157,6 +157,7 @@
         */
     }
     .tabbrowser-tab[selected="true"]:after { /* Right Triangle (of selected tab) */
+        /*
         content: '' !important; display: var(--tab-triangle);
         position: absolute !important; top: 2px !important; right: var(--tab-overlap) !important;
         width: 0 !important; height: 0 !important;
@@ -164,6 +165,7 @@
         border-right: calc(var(--tab-triangle-height)/2) solid var(--bg-dark) !important;
         border-top: calc((var(--tab-triangle-height)/2) - var(--tab-triangle-correction)) solid var(--bg-selected) !important;
         border-bottom: calc((var(--tab-triangle-height)/2) + var(--tab-triangle-correction)) solid var(--bg-selected) !important;
+        */
     }
 
     #TabsToolbar, #tabbrowser-tabs {
@@ -174,7 +176,7 @@
 
         margin-bottom: 2px !important;
         /* --- Uncomment the line below to attach the url-bar to the tab-bar [EXPERIMENTAL] (Require a line in "#nav-bar" above) --- */
-        margin-left: 160px !important;/**/
+        margin-left: 186px !important;/**/
     }
     #TabsToolbar::after { display: none !important; }
     .tabbrowser-tab::before, .tabbrowser-tab::after { background: none !important; opacity: 1 !important; display: none !important; }
@@ -263,4 +265,4 @@ tabbrowser tabpanels, #appcontent > #content { background: var(--bg-light) !impo
 /* Set dark text in light textareas
 @-moz-document regexp("https?://(?!(localhost|twily.info|.*.4chan.org|.*.youtube.com)).*") {
     input, textarea { color: #222628 !important; -moz-appearance: none !important; }
-    }*/
+}*/
