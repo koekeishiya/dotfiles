@@ -16,6 +16,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'arakashic/chromatica.nvim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'zchee/deoplete-clang'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,7 +79,7 @@ set smartcase           " ... unless the query has capital letters.
 set incsearch
 set switchbuf=usetab,newtab
 set nojoinspaces
-set cino==0             " disable retarded indentation after case labels
+set cino=:0,=4             " fix indentation for switch statements
 "set cursorline
 "let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
 "set noshowmatch         " Don't match parentheses/brackets
@@ -155,6 +157,10 @@ let g:multi_cursor_exit_from_insert_mode = 0
 let g:chromatica#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 let g:chromatica#responsive_mode=1
 let g:chromatica#enable_at_startup=1
+
+let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header='/Library/Developer/CommandLineTools/usr/lib/clang'
+set completeopt -=preview
 
 syntax enable
 
