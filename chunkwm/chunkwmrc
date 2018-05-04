@@ -121,5 +121,6 @@ chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
 chunkc tiling::rule --owner Spotify --desktop 5 --follow-desktop
 chunkc tiling::rule --owner Steam --desktop 5 --follow-desktop
+chunkc tiling::rule --owner Discord --desktop 5 --follow-desktop
 
 dock-inject
