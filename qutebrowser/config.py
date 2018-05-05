@@ -131,3 +131,8 @@ c.colors.tabs.selected.even.bg = '#202020'
 # Font used in the tab bar.
 # Type: QtFont
 c.fonts.tabs = '10pt fantasque sans mono'
+
+# Bindings for normal mode
+config.bind(';M', 'hint --rapid links spawn umpv {hint-url}')
+config.bind('M', 'hint links spawn umpv {hint-url}')
+config.bind('m', 'spawn umpv {url}')
