@@ -20,12 +20,16 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # Padding (in pixels) around text for tabs.
 # Type: Padding
-c.tabs.padding = {'bottom': 0, 'left': 5, 'right': 5, 'top': 5}
+c.tabs.padding = {'bottom': 5, 'left': 5, 'right': 5, 'top': 5}
 
 # Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 # for a blank page.
 # Type: FuzzyUrl
 c.url.default_page = 'https://koekeishiya.github.io/chunkwm/'
+
+# Page(s) to open at the start.
+# Type: List of FuzzyUrl, or FuzzyUrl
+c.url.start_pages = 'https://koekeishiya.github.io/chunkwm/'
 
 # Hide the window decoration.  This setting requires a restart on
 # Wayland.
@@ -60,6 +64,28 @@ c.colors.statusbar.command.fg = '#d4c5a1'
 # Background color of the statusbar in command mode.
 # Type: QssColor
 c.colors.statusbar.command.bg = '#202020'
+
+# Default foreground color of the URL in the statusbar.
+# Type: QssColor
+c.colors.statusbar.url.fg = '#d5c4a1'
+
+# Foreground color of the URL in the statusbar on error.
+# Type: QssColor
+c.colors.statusbar.url.error.fg = '#d75f5f'
+
+# Foreground color of the URL in the statusbar on successful load
+# (http).
+# Type: QssColor
+c.colors.statusbar.url.success.http.fg = '#84edb9'
+
+# Foreground color of the URL in the statusbar on successful load
+# (https).
+# Type: QssColor
+c.colors.statusbar.url.success.https.fg = '#8fee96'
+
+# Foreground color of the URL in the statusbar when there's a warning.
+# Type: QssColor
+c.colors.statusbar.url.warn.fg = '#cd950c'
 
 # Background color of the tab bar.
 # Type: QtColor
