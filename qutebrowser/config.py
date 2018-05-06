@@ -54,6 +54,22 @@ c.colors.completion.odd.bg = '#333333'
 # Type: QssColor
 c.colors.completion.even.bg = '#202020'
 
+# Background color of the selected completion item.
+# Type: QssColor
+c.colors.completion.item.selected.bg = '#8fee96'
+
+# Top border color of the completion widget category headers.
+# Type: QssColor
+c.colors.completion.item.selected.border.top = '#151515'
+
+# Bottom border color of the selected completion item.
+# Type: QssColor
+c.colors.completion.item.selected.border.bottom = '#151515'
+
+# Foreground color of the matched text in the completion.
+# Type: QssColor
+c.colors.completion.match.fg = '#d75f5f'
+
 # Foreground color of the statusbar.
 # Type: QssColor
 c.colors.statusbar.normal.fg = '#d5c4a1'
