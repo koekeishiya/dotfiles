@@ -84,7 +84,7 @@ chunkc set window_use_cgs_move           0
 # NOTE: the following are config variables for the chunkwm-border plugin.
 #
 
-chunkc set focused_border_color          0xff8fee96
+chunkc set focused_border_color          0xff775759
 chunkc set focused_border_width          5
 chunkc set focused_border_radius         0
 chunkc set focused_border_skip_floating  1
