@@ -58,35 +58,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-
-# MY THEME
 local ret_status="%(?:%{$fg_bold[green]%}>>:%{$fg_bold[red]%}>>)"
 PS1='${ret_status} %{$fg[yellow]%}%c%{$reset_color%} $(git_prompt_info)'
 
@@ -101,18 +72,12 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export EDITOR='/opt/local/bin/nvim'
-export HOMEBREW_GITHUB_API_TOKEN=a9d0551985f9ff5be90e1fb0df1a77f5d61d1057
 alias devenv='pushd ~/Documents/programming && tmux && popd'
 alias gitlog='git log --all --graph --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset :%C(yellow)%d%Creset %s %Cgreen(%cr) %Creset" --abbrev-commit'
 alias mpv='open -na mpv.app'
-alias loadkhd='launchctl load /Users/Koe/Library/LaunchAgents/com.koekeishiya.khd.plist'
-alias unloadkhd='launchctl unload /Users/Koe/Library/LaunchAgents/com.koekeishiya.khd.plist'
-alias ebar='nvim "/Users/Koe/Library/Application Support/Übersicht/widgets"'
 alias ll='ls -lh'
 alias lz="ps axo pid=,stat= | awk '\$2~/^Z/ { print \$1 }'"
 alias binclock='python /Users/Koe/Scripts/binclock.py'
-alias day-mode='/Users/Koe/Scripts/day-mode'
-alias night-mode='/Users/Koe/Scripts/night-mode'
 alias nosleep='caffeinate -d'
 alias disasm='objdump -disassemble'
 
