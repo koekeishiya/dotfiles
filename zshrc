@@ -58,8 +58,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-local ret_status="%(?:%{$fg_bold[green]%}>>:%{$fg_bold[red]%}>>)"
-PS1='${ret_status} %{$fg[yellow]%}%c%{$reset_color%} $(git_prompt_info)'
+# local ret_status="%(?:%{$fg_bold[green]%}>>:%{$fg_bold[red]%}>>)"
+# PS1='${ret_status} %{$fg[yellow]%}%c%{$reset_color%} $(git_prompt_info)'
+PS1='%{$fg_bold[yellow]%}%c%{$reset_color%} $(git_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[magenta]%}git(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
