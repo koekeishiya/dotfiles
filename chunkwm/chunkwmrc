@@ -95,6 +95,7 @@ chunkc set focused_border_skip_monocle   1
 #
 
 chunkc set ffm_bypass_modifier           \"cmd shift\"
+chunkc set ffm_standby_on_float          0
 
 #
 # NOTE: specify plugins to load when chunkwm starts.
