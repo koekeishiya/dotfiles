@@ -70,6 +70,10 @@ c.colors.completion.item.selected.border.bottom = '#151515'
 # Type: QssColor
 c.colors.completion.match.fg = '#d75f5f'
 
+# Background color for the download bar.
+# Type: QssColor
+c.colors.downloads.bar.bg = '#202020'
+
 # Foreground color of the statusbar.
 # Type: QssColor
 c.colors.statusbar.normal.fg = '#d5c4a1'
@@ -149,6 +153,8 @@ c.colors.tabs.selected.even.bg = '#202020'
 c.fonts.tabs = '10pt fantasque sans mono'
 
 # Bindings for normal mode
-config.bind(';M', 'hint --rapid links spawn umpv {hint-url}')
-config.bind('M', 'hint links spawn umpv {hint-url}')
-config.bind('m', 'spawn umpv {url}')
+config.bind(';M', 'hint --rapid links spawn open -na /Applications/mpv.app {hint-url}')
+config.bind('<Meta+n>', 'open -p')
+config.bind('<Meta+w>', 'close')
+config.bind('M', 'hint links spawn open -na /Applications/mpv.app {hint-url}')
+config.bind('m', 'spawn open -na /Applications/mpv.app {url}')
