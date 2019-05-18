@@ -66,7 +66,7 @@ hi Normal guifg=7 guibg=Black
 hi Comment ctermfg=DarkGray guifg=DarkGray
 
 hi Identifier ctermfg=Yellow guifg=#4f4f4f
-hi cCustomFunc ctermfg=8 guifg=#4f4f4f
+hi cCustomFunc ctermfg=DarkGray guifg=#4f4f4f
 
 hi Statement ctermfg=Yellow guifg=#4f4f4f
 hi Operator ctermfg=Yellow guifg=Green

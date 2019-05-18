@@ -51,6 +51,8 @@ nmap <F5> :TagbarToggle<CR>
 " nnoremap <F7> :LL next<CR>
 " nnoremap <F8> :LL continue<CR>
 " nnoremap <F9> :LL process interrupt<CR>
+map <C-K> :pyf /Users/Koe/Scripts/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /Users/Koe/Scripts/clang-format.py<cr>
 
 if has('nvim')
     tnoremap <Esc> <c-\><c-n>
@@ -58,13 +60,12 @@ endif
 
 let mapleader = ','
 
-"tab adds 4spaces
 filetype plugin indent on
+let &cpo=s:cpo_save
+unlet s:cpo_save
 set tabstop=4
 set shiftwidth=4
 set expandtab
-let &cpo=s:cpo_save
-unlet s:cpo_save
 set backspace=2
 set fileencodings=ucs-bom,utf-8,default,latin1
 set encoding=utf-8
@@ -92,6 +93,7 @@ set lazyredraw          " Wait to redraw
 "set scrolljump=8       " Scroll 8 lines at a time at bottom/top
 let html_no_rendering=1 " Don't render italic, bold, links in HTML
 autocmd BufWritePre * :%s/\s\+$//e
+
 
 set guitablabel=%N/\ %t\ %M
 
@@ -154,12 +156,20 @@ let g:airline#extensions#tagbar#enabled = 1
 
 let g:multi_cursor_exit_from_insert_mode = 0
 
-let g:chromatica#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+"let g:chromatica#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+let g:chromatica#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 let g:chromatica#responsive_mode=1
 let g:chromatica#enable_at_startup=1
 
-let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-let g:deoplete#sources#clang#clang_header='/Library/Developer/CommandLineTools/usr/lib/clang'
+"let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+"let g:deoplete#sources#clang#clang_header='/Library/Developer/CommandLineTools/usr/lib/clang'
+
+let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang'
+
+let g:python_host_prog='/opt/local/bin/python2.7'
+let g:python3_host_prog='/opt/local/bin/python3.6'
+
 set completeopt -=preview
 
 syntax enable

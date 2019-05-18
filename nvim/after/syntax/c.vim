@@ -4,4 +4,4 @@ syn match    cCustomScope    "::"
 syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
 " syn keyword cTodo NOTE
 syn keyword myNote NOTE containedin=cComment,cCommentL
-syn keyword myStatic internal local_persist global_variable
+syn keyword myStatic internal local global
