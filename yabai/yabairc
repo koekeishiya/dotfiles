@@ -23,7 +23,7 @@ yabai -m config active_window_border_color   0xff775759
 yabai -m config normal_window_border_color   0xff505050
 yabai -m config insert_window_border_color   0xffd75f5f
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.97
+yabai -m config normal_window_opacity        0.95
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               fn
