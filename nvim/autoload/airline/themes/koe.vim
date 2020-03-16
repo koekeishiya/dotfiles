@@ -48,7 +48,7 @@ function! airline#themes#koe#refresh()
   let g:airline#themes#koe#palette.visual.airline_error = g:airline#themes#koe#palette.normal.airline_error
   let g:airline#themes#koe#palette.visual_modified.airline_error = g:airline#themes#koe#palette.normal_modified.airline_error
 
-  let s:IA = airline#themes#get_highlight2(['TabLine', 'fg'], ['CursorLine', 'bg'])
+  let s:IA = airline#themes#get_highlight2(['Normal', 'fg'], ['StatusLineNC', 'bg'])
   let g:airline#themes#koe#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
   let g:airline#themes#koe#palette.inactive_modified = { 'airline_c': modified_group }
 
