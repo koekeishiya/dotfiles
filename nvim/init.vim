@@ -9,14 +9,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-airline/vim-airline'
 Plugin 'bling/vim-bufferline'
-Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'arakashic/chromatica.nvim'
-Plugin 'rust-lang/rust.vim'
 Plugin 'zchee/deoplete-clang'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,8 +38,6 @@ nnoremap <F1> :cprev<cr>
 nnoremap <F2> :cnext<cr>
 nnoremap <silent> <F3> :cclose\|cd %:h/..\|make!\|cd %:h\|copen\|redraw!<cr>:normal G<cr>
 nnoremap <silent> <F4> :cclose\|cd %:h/..\|make!\|cd %:h\|redraw!<cr>
-nnoremap <silent> <C-j> :MultipleCursorsFind <C-R>/<CR>
-vnoremap <silent> <C-j> :MultipleCursorsFind <C-R>/<CR>
 nmap <F5> :TagbarToggle<CR>
 " nmap <F4> <Plug>LLBreakSwitch
 " nnoremap <F5> :LLmode debug<CR>
@@ -51,8 +45,6 @@ nmap <F5> :TagbarToggle<CR>
 " nnoremap <F7> :LL next<CR>
 " nnoremap <F8> :LL continue<CR>
 " nnoremap <F9> :LL process interrupt<CR>
-map <C-K> :pyf /Users/Koe/Scripts/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /Users/Koe/Scripts/clang-format.py<cr>
 
 if has('nvim')
     tnoremap <Esc> <c-\><c-n>
@@ -94,7 +86,6 @@ set lazyredraw          " Wait to redraw
 let html_no_rendering=1 " Don't render italic, bold, links in HTML
 autocmd BufWritePre * :%s/\s\+$//e
 
-
 set guitablabel=%N/\ %t\ %M
 
 " vim: set ft=vim :
@@ -119,28 +110,10 @@ command! -nargs=0 Cclear call setqflist([]) | cclose
 
 command! -nargs=+ Search call setqflist([]) | call GrepBuffers(<q-args>) | copen
 
-abbreviate cincludes #include <stdio.h>
-           \<CR>#include <stdlib.h>
-           \<CR>#include <stdint.h>
-
-abbreviate cmain int main(int Count, char **Args)
-            \<CR>{<CR>return EXIT_SUCCESS;<CR>}<UP><UP>
-
-abbreviate cerror void Error(const char *Format, ...)
-            \<CR>{<CR>va_list Args;<CR>va_start(Args, Format);
-            \<CR>vfprintf(stderr, Format, Args);
-            \<CR>va_end(Args);<CR>exit(EXIT_FAILURE);<CR>}
-
-abbreviate cargs int ParseArguments(int Count, char **Args)
-            \<CR>{<CR>int Option;<CR>const char *Short = "";
-            \<CR>struct option Long[] =<CR>{<CR>{ NULL, 0, NULL, 0 }<CR>};<CR>
-            \<CR>while((Option = getopt_long(Count, Args, Short, Long, NULL)) != -1)
-            \<CR>{<CR>switch(Option)<CR>{<CR>}<CR>}<CR><CR>return 0;<CR>}
-
 let g:deoplete#enable_at_startup = 1
 
 let g:airline_powerline_fonts=1
-let g:airline_theme='gruvbox'
+let g:airline_theme='koe'
 
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#enabled = 1
@@ -153,8 +126,6 @@ let g:airline#extensions#tabline#show_close_button = 0
 
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
-
-let g:multi_cursor_exit_from_insert_mode = 0
 
 "let g:chromatica#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 let g:chromatica#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
@@ -174,5 +145,4 @@ set completeopt -=preview
 
 syntax enable
 
-"colorscheme koe
-colorscheme koe.new
+colorscheme koe

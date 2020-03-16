@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:	koekeishiya
-" Last Change:	2017 Jan 31
+" Last Change:	2020 March 16
 
 set bg&
 hi clear
@@ -60,50 +60,49 @@ let colors_name = "koe"
 " *Todo             anything that needs extra attention;
 "                   mostly the keywords TODO FIXME and XXX
 
-hi Pmenu ctermfg=7 ctermbg=Black guifg=White guibg=Black
+hi Pmenu ctermfg=7 ctermbg=0
 
-hi Normal guifg=7 guibg=Black
-hi Comment ctermfg=DarkGray guifg=DarkGray
+hi Comment ctermfg=2
 
-hi Identifier ctermfg=Yellow guifg=#4f4f4f
-hi cCustomFunc ctermfg=DarkGray guifg=#4f4f4f
+hi Identifier ctermfg=7
+hi cCustomFunc ctermfg=8
+hi link Function cCustomFunc
 
-hi Statement ctermfg=Yellow guifg=#4f4f4f
-hi Operator ctermfg=Yellow guifg=Green
+hi Statement ctermfg=15
+hi Operator ctermfg=15
 
-hi Type ctermfg=7 guifg=Green
-hi StorageClass ctermfg=Yellow guifg=#4f4f4f
-hi Structure ctermfg=Yellow guifg=Green
+hi Type ctermfg=10
+hi StorageClass ctermfg=15
+hi Structure ctermfg=15
 
-hi Constant ctermfg=Yellow guifg=DarkGCyan
-hi String ctermfg=DarkGray guifg=DarkGray
-hi Character ctermfg=DarkGray guifg=DarkGray
-hi Number ctermfg=Yellow guifg=DarkCyan
-hi Boolean ctermfg=Yellow guifg=Green
+hi Constant ctermfg=6
+hi String ctermfg=4
+hi Character ctermfg=4
+hi Number ctermfg=6
+hi Boolean ctermfg=6
+hi Special ctermfg=4
 
-hi Special ctermfg=DarkGray guifg=DarkGray
+hi SignColumn ctermbg=8
+hi lineNr ctermfg=8
 
-hi SignColumn ctermbg=Black guibg=Black
-hi lineNr ctermfg=DarkGray guifg=DarkGray
+hi Todo ctermfg=2 ctermbg=NONE cterm=bold
+hi myNote ctermfg=2 ctermbg=NONE cterm=bold
+hi myStatic ctermfg=15
 
-hi Todo ctermfg=Red guifg=Red ctermbg=NONE guibg=NONE cterm=bold gui=bold,underline
-hi myNote ctermfg=DarkGray ctermbg=NONE cterm=bold
-hi myStatic ctermfg=Yellow
+hi Error ctermfg=8 ctermbg=1
 
-hi Error ctermfg=Black ctermbg=DarkRed guifg=Black guibg=DarkRed
+hi TabLine ctermbg=0 ctermfg=8
+hi TabLineSel ctermfg=1
+hi TabLineFill ctermfg=8
+hi VertSplit ctermbg=8 ctermfg=8
 
-hi TabLine ctermbg=Black ctermfg=8 guibg=Black guifg=8
-hi TabLineSel ctermfg=DarkRed guifg=DarkRed
-hi TabLineFill ctermfg=Black guifg=Black
-hi VertSplit ctermbg=Black ctermfg=Black guifg=Black guibg=Green
+hi Search cterm=bold ctermfg=0 ctermbg=1
+hi Visual ctermfg=8 ctermbg=1 cterm=NONE
 
-hi Search cterm=bold ctermfg=Black ctermbg=DarkRed guifg=Black gui=bold guibg=DarkRed
-hi Visual ctermfg=Black ctermbg=DarkRed cterm=NONE
+hi PreProc ctermfg=10
+hi MatchParen cterm=bold ctermbg=NONE ctermfg=10
 
-hi PreProc ctermfg=Magenta guifg=Green
-hi MatchParen cterm=bold ctermbg=NONE ctermfg=DarkGreen
-
-hi StatusLine ctermfg=Black ctermbg=8 guifg=Black guibg=8
-hi StatusLineNC ctermfg=Black ctermbg=8 guifg=Black guibg=8
-hi CursorLine cterm=NONE ctermbg=Black gui=NONE guibg=Black
-hi StatusLine ctermbg=NONE cterm=NONE
+hi StatusLine ctermfg=7 ctermbg=0
+hi StatusLineNC ctermfg=7 ctermbg=0
+hi CursorLine ctermfg=7 ctermbg=0 cterm=NONE
+hi StatusLine ctermfg=7 ctermbg=0 cterm=NONE
