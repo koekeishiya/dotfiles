@@ -91,9 +91,9 @@ hi myStatic ctermfg=15
 
 hi Error ctermfg=8 ctermbg=1
 
-hi TabLine ctermbg=0 ctermfg=0
-hi TabLineSel ctermfg=0 ctermbg=0
-hi TabLineFill ctermfg=0 ctermbg=0
+hi TabLine ctermfg=8 ctermbg=0
+hi TabLineSel ctermfg=7 ctermbg=0 cterm=NONE
+hi TabLineFill ctermfg=0 ctermbg=8
 hi VertSplit ctermbg=0 ctermfg=0
 
 hi Search cterm=bold ctermfg=0 ctermbg=1
