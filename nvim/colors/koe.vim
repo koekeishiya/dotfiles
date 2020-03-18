@@ -103,5 +103,5 @@ hi PreProc ctermfg=10
 hi MatchParen cterm=bold ctermbg=NONE ctermfg=10
 
 hi StatusLine ctermfg=7 ctermbg=0 cterm=NONE
-hi StatusLineNC ctermfg=7 ctermbg=0
+hi StatusLineNC ctermfg=8 ctermbg=0 cterm=NONE
 hi CursorLine ctermfg=7 ctermbg=0 cterm=NONE
