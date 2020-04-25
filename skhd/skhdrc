@@ -1,5 +1,5 @@
 # open terminal
-cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
 # open mpv with url from clipboard
 cmd - m : open -na /Applications/mpv.app $(pbpaste)
@@ -34,22 +34,22 @@ shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 # make floating window fill right-half of screen
 shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
-# create desktop, move window and follow focus
-shift + cmd - n : yabai -m space --create;\
-                  id=$(yabai -m query --displays --display | grep "spaces");\
-                  yabai -m window --space $(echo ${id:10:${#id}-10});\
-                  yabai -m space --focus $(echo ${id:10:${#id}-10})
+# create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
+shift + cmd - n : yabai -m space --create && \
+                  index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                  yabai -m window --space "${index}" && \
+                  yabai -m space --focus "${index}"
 
-# create desktop and follow focus
-cmd + alt - n : yabai -m space --create;\
-                id=$(yabai -m query --displays --display | grep "spaces");\
-                yabai -m space --focus $(echo ${id:10:${#id}-10})
+# create desktop and follow focus - uses jq for parsing json (brew install jq)
+cmd + alt - n : yabai -m space --create && \
+                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                yabai -m space --focus "${index}"
 
 # destroy desktop
 cmd + alt - w : yabai -m space --destroy
 
 # fast focus desktop
-cmd + alt - x : yabai -m space --focus last
+cmd + alt - x : yabai -m space --focus recent
 cmd + alt - z : yabai -m space --focus prev
 cmd + alt - c : yabai -m space --focus next
 cmd + alt - 1 : yabai -m space --focus 1
@@ -64,7 +64,7 @@ cmd + alt - 9 : yabai -m space --focus 9
 cmd + alt - 0 : yabai -m space --focus 10
 
 # send window to desktop and follow focus
-shift + cmd - x : yabai -m window --space last; yabai -m space --focus last
+shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
 shift + cmd - z : yabai -m window --space prev; yabai -m space --focus prev
 shift + cmd - c : yabai -m window --space next; yabai -m space --focus next
 shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
@@ -79,7 +79,7 @@ shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
 shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus monitor
-ctrl + alt - x  : yabai -m display --focus last
+ctrl + alt - x  : yabai -m display --focus recent
 ctrl + alt - z  : yabai -m display --focus prev
 ctrl + alt - c  : yabai -m display --focus next
 ctrl + alt - 1  : yabai -m display --focus 1
@@ -87,7 +87,7 @@ ctrl + alt - 2  : yabai -m display --focus 2
 ctrl + alt - 3  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
-ctrl + cmd - x  : yabai -m window --display last; yabai -m display --focus last
+ctrl + cmd - x  : yabai -m window --display recent; yabai -m display --focus recent
 ctrl + cmd - z  : yabai -m window --display prev; yabai -m display --focus prev
 ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
 ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
@@ -139,23 +139,24 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
-# toggle window border
-shift + alt - b : yabai -m window --toggle border
-
 # toggle window split type
 alt - e : yabai -m window --toggle split
 
-# float / unfloat window and center on screen
-alt - t : yabai -m window --toggle float;\
-          yabai -m window --grid 4:4:1:1:2:2
+# float / unfloat window and restore position
+alt - t : yabai -m window --toggle float && /tmp/yabai-restore/$(yabai -m query --windows --window | jq -re '.id').restore 2>/dev/null || true
 
-# toggle sticky
+# toggle sticky (show on all spaces)
 alt - s : yabai -m window --toggle sticky
 
-# toggle sticky, float and resize to picture-in-picture size
+# toggle topmost (keep above other windows)
+alt - o : yabai -m window --toggle topmost
+
+# toggle sticky(+float), topmost, picture-in-picture
 alt - p : yabai -m window --toggle sticky;\
-          yabai -m window --grid 5:5:4:0:1:1
+          yabai -m window --toggle topmost;\
+          yabai -m window --toggle pip
 
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
 ctrl + alt - d : yabai -m space --layout float
+ctrl + alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
