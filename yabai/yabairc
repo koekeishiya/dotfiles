@@ -42,8 +42,12 @@ yabai -m rule --add app="^Xcode$" manage=off
 # signals
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_activated action="pkill -SIGUSR1 limelight &> /dev/null"
 
 # restore position of floating windows when they are manually unfloated
 ~/Scripts/yabai_restore.sh
+
+killall limelight &> /dev/null
+~/Documents/programming/C/limelight/bin/limelight &> /dev/null &
 
 echo "yabai configuration loaded.."
