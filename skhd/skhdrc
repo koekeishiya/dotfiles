@@ -154,9 +154,9 @@ alt - s : yabai -m window --toggle sticky
 # toggle topmost (keep above other windows)
 alt - o : yabai -m window --toggle topmost
 
-# toggle sticky(+float), topmost, picture-in-picture
-alt - p : yabai -m window --toggle sticky &&\
-          yabai -m window --toggle topmost &&\
+# toggle picture-in-picture
+alt - p : yabai -m window --toggle float &&\
+          yabai -m window --toggle border && \
           yabai -m window --toggle pip
 
 # change layout of desktop
