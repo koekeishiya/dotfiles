@@ -38,7 +38,7 @@ yabai -m rule --add app="^Safari$" space=3
 yabai -m rule --add app="^Notes$" space=4
 yabai -m rule --add app="^Transmission$" space=5
 yabai -m rule --add app="^Spotify$" space=6
-yabai -m rule --add app="^Discord$" space=7 grid=1:1:0:0:1:1
+yabai -m rule --add app="^Discord$" space=7 grid=1:1:0:0:1:1 manage=off
 yabai -m rule --add app="^Steam$" space=7 manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Xcode$" manage=off
