@@ -30,6 +30,7 @@ yabai -m config right_padding                12
 yabai -m config window_gap                   06
 
 # specific space settings
+yabai -m config --space 2 layout             stack
 yabai -m config --space 7 layout             float
 
 # window rules
@@ -41,11 +42,13 @@ yabai -m rule --add app="^Spotify$" space=6
 yabai -m rule --add app="^Discord$" space=7 grid=1:1:0:0:1:1 manage=off
 yabai -m rule --add app="^Steam$" space=7 manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^Xcode$" manage=off
 
 # signals
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+yabai -m signal --add event=application_activated app="^mpv$" action="/Users/Koe/Scripts/mpv_opacity"
+yabai -m signal --add event=application_deactivated app="^mpv$" action="/Users/Koe/Scripts/mpv_opacity"
 
 # restore position of floating windows when they are manually unfloated
 # ~/Scripts/yabai_restore.sh
