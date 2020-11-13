@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# necessary to load scripting-addition during startup on macOS Big Sur
+# *yabai --load-sa* is configured to run through sudo without a password
+sudo yabai --load-sa
+
 # global settings
 yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          autoraise
@@ -46,11 +50,5 @@ yabai -m rule --add app="^System Preferences$" manage=off
 # signals
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-
-yabai -m signal --add event=application_activated app="^mpv$" action="/Users/Koe/Scripts/mpv_opacity"
-yabai -m signal --add event=application_deactivated app="^mpv$" action="/Users/Koe/Scripts/mpv_opacity"
-
-# restore position of floating windows when they are manually unfloated
-# ~/Scripts/yabai_restore.sh
 
 echo "yabai configuration loaded.."
