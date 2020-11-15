@@ -3,6 +3,7 @@
 # necessary to load scripting-addition during startup on macOS Big Sur
 # *yabai --load-sa* is configured to run through sudo without a password
 sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config mouse_follows_focus          on
@@ -33,22 +34,32 @@ yabai -m config left_padding                 12
 yabai -m config right_padding                12
 yabai -m config window_gap                   06
 
+# mission-control desktop labels
+yabai -m space 1 --label code
+yabai -m space 2 --label mail
+yabai -m space 3 --label web
+yabai -m space 4 --label notes
+yabai -m space 5 --label re
+yabai -m space 6 --label media
+yabai -m space 7 --label social
+yabai -m space 8 --label games
+
 # specific space settings
-yabai -m config --space 2 layout             stack
-yabai -m config --space 7 layout             float
+yabai -m config --space mail  layout        stack
+yabai -m config --space games layout        float
 
 # window rules
-yabai -m rule --add app="^Mail$" space=2
-yabai -m rule --add app="^Safari$" space=3
-yabai -m rule --add app="^Notes$" space=4
-yabai -m rule --add app="^Transmission$" space=5
-yabai -m rule --add app="^Spotify$" space=6
-yabai -m rule --add app="^Discord$" space=7 grid=1:1:0:0:1:1 manage=off
-yabai -m rule --add app="^Steam$" space=7 manage=off
+yabai -m rule --add app="^Mail$" space=mail
+yabai -m rule --add app="^Safari$" space=web
+yabai -m rule --add app="^Notes$" space=notes
+yabai -m rule --add app="^ida64$" space=re
+yabai -m rule --add app="^Transmission$" space=media
+yabai -m rule --add app="^Spotify$" space=media
+yabai -m rule --add app="^Discord$" space=social grid=1:1:0:0:1:1 manage=off
+yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 
 # signals
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
