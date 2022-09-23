@@ -43,7 +43,7 @@ yabai -m config                              \
     window_placement            second_child \
     window_topmost              off          \
     window_shadow               off          \
-    window_animation_duration   0.50         \
+    window_animation_duration   0.25         \
     window_opacity_duration     0.25         \
     active_window_opacity       0.90         \
     normal_window_opacity       0.50         \
